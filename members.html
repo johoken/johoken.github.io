@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>メンバー | 緑地環境情報学研究室</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="緑地環境情報学研究室のメンバー紹介（PI・学生・OB/OG）">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d110f;
+    --bg2: #151a17;
+    --bg3: #1a2118;
+    --accent: #3e604e;
+    --accent-light: #5a8a6e;
+    --text: #e2e8f0;
+    --text-dim: #8a9a92;
+    --gold: #b09a6a;
+    --gold-light: #d4c49a;
+    --gold-dim: rgba(176, 154, 106, 0.15);
+    --border: rgba(176, 154, 106, 0.12);
+    --link: #8fc5b0;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    animation: pageFadeIn 0.7s ease forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  a { color: var(--link); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--gold-light); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── Background ── */
+  .bg-grain {
+    position: fixed; inset: 0; z-index: 1;
+    opacity: 0.035; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+  .bg-radial {
+    position: fixed; inset: 0; z-index: 1;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(62,96,78,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 70%, rgba(176,154,106,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ── Corner marks ── */
+  .corner-mark { position: fixed; z-index: 10; width: 32px; height: 32px; pointer-events: none; }
+  .corner-mark::before, .corner-mark::after { content: ''; position: absolute; background: var(--gold); opacity: 0.25; }
+  .corner-mark.tl { top: 16px; left: 16px; }
+  .corner-mark.tl::before { top: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.tl::after  { top: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.tr { top: 16px; right: 16px; }
+  .corner-mark.tr::before { top: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.tr::after  { top: 0; right: 0; width: 100%; height: 1px; }
+  .corner-mark.bl { bottom: 16px; left: 16px; }
+  .corner-mark.bl::before { bottom: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.bl::after  { bottom: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.br { bottom: 16px; right: 16px; }
+  .corner-mark.br::before { bottom: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.br::after  { bottom: 0; right: 0; width: 100%; height: 1px; }
+  @media (max-width: 768px) { .corner-mark { width: 20px; height: 20px; } }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(13, 17, 15, 0.94);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .container { width: min(1080px, 92vw); margin: 0 auto; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .brand {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(13px, 2vw, 17px);
+    color: var(--gold); font-weight: 700; letter-spacing: 0.06em;
+    text-decoration: none; display: block; transition: color 0.3s;
+  }
+  .brand:hover { color: var(--gold-light); }
+  .brand small {
+    display: block; font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px; font-weight: 300; letter-spacing: 0.28em;
+    color: var(--text-dim); text-transform: uppercase; margin-top: 3px;
+  }
+  .g-nav-menu {
+    list-style: none; display: flex; gap: 2px;
+    font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 500;
+  }
+  .g-nav-menu a {
+    display: block; padding: 6px 10px; color: var(--text-dim);
+    letter-spacing: 0.08em; border-radius: 4px; transition: color 0.3s, background 0.3s;
+  }
+  .g-nav-menu a:hover, .g-nav-menu a.active { color: var(--gold); background: var(--gold-dim); }
+  .ham-btn {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px; z-index: 51;
+  }
+  .ham-btn span { display: block; width: 22px; height: 1px; background: var(--text-dim); transition: all 0.3s; }
+  @media (max-width: 760px) { .g-nav-menu { display: none; } .ham-btn { display: flex; } }
+  .g-nav-menu.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 0; right: 0; bottom: 0; width: 240px;
+    background: rgba(13,17,15,0.97);
+    border-left: 1px solid var(--gold-dim);
+    padding: 64px 24px 24px; gap: 4px; z-index: 50;
+  }
+  .g-nav-menu.open a { padding: 12px 14px; }
+
+  /* ── Page header ── */
+  .page-header {
+    padding: 48px 0 36px;
+    position: relative; z-index: 5;
+    border-bottom: 1px solid var(--gold-dim);
+    margin-bottom: 36px;
+  }
+  .page-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700; letter-spacing: 0.2em; color: var(--text);
+    position: relative; display: inline-block; padding-bottom: 16px;
+  }
+  .page-title::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; width: 55%;
+    height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .page-title-en {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--text-dim); margin-top: 10px;
+  }
+
+  /* ── Main ── */
+  main { padding: 0 0 72px; position: relative; z-index: 5; }
+
+  /* ── Section title ── */
+  .sec-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.12em;
+    margin: 40px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gold-dim);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-title::before {
+    content: ''; display: block;
+    width: 3px; height: 18px;
+    background: var(--gold); border-radius: 2px; opacity: 0.8; flex-shrink: 0;
+  }
+
+  /* ── Profile card ── */
+  .profile-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+  }
+  .profile-left {
+    padding: 24px;
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 16px;
+    background: rgba(62,96,78,0.04);
+  }
+  .profile-photo {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover; border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+  }
+  .photo-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 2.5rem; color: var(--text-dim); letter-spacing: 0.1em;
+  }
+  .profile-name { margin-top: 4px; }
+  .profile-name-ja {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--text); letter-spacing: 0.1em;
+  }
+  .profile-name-en {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px; font-weight: 300;
+    color: var(--text-dim); margin-top: 4px; letter-spacing: 0.05em;
+  }
+  .profile-links {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 4px;
+  }
+  .profile-links a {
+    font-size: 11px; padding: 3px 10px;
+    border: 1px solid var(--gold-dim);
+    border-radius: 999px; color: var(--text-dim);
+    transition: color 0.3s, border-color 0.3s;
+    letter-spacing: 0.05em;
+  }
+  .profile-links a:hover { color: var(--gold); border-color: var(--gold-dim); }
+
+  .profile-right { padding: 24px; }
+  .profile-section { margin-bottom: 18px; }
+  .profile-section:last-child { margin-bottom: 0; }
+  .profile-sec-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+    padding-bottom: 6px; border-bottom: 1px solid var(--gold-dim);
+  }
+  .career-list { list-style: none; display: grid; gap: 10px; }
+  .career-item { display: grid; gap: 2px; }
+  .career-period {
+    font-size: 11px; font-weight: 300;
+    color: var(--text-dim); letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+  }
+  .career-place { font-size: 13px; line-height: 1.6; }
+
+  .edu-list { list-style: none; display: grid; gap: 6px; }
+  .edu-item { font-size: 13px; line-height: 1.6; }
+
+  .theme-list {
+    list-style: none; display: grid; gap: 6px;
+  }
+  .theme-list li {
+    font-size: 13px; line-height: 1.7;
+    padding-left: 14px; position: relative;
+  }
+  .theme-list li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--gold); opacity: 0.6; font-size: 11px;
+  }
+
+  @media (max-width: 860px) {
+    .profile-card { grid-template-columns: 1fr; }
+    .profile-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .profile-photo, .photo-placeholder { aspect-ratio: 3/2; max-height: 240px; }
+  }
+
+  /* ── Student members ── */
+  .member-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+  }
+  .member-card-hd {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .member-card-hd::before {
+    content: ''; display: block;
+    width: 3px; height: 15px;
+    background: var(--gold); border-radius: 2px; opacity: 0.8; flex-shrink: 0;
+  }
+  .member-card-bd { padding: 20px 24px; }
+  .member-list { list-style: none; display: grid; gap: 0; }
+  .member-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px; line-height: 1.7;
+    display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline;
+  }
+  .member-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .member-name { font-weight: 500; }
+  .member-info { font-size: 12px; color: var(--text-dim); }
+  .member-theme { font-size: 13px; color: var(--text-dim); width: 100%; margin-top: 2px; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--gold-dim);
+    padding: 24px 0; position: relative; z-index: 10;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .footer-links a { font-size: 12px; letter-spacing: 0.08em; color: var(--text-dim); }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+
+<div class="bg-grain"></div>
+<div class="bg-radial"></div>
+<div class="corner-mark tl"></div>
+<div class="corner-mark tr"></div>
+<div class="corner-mark bl"></div>
+<div class="corner-mark br"></div>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      緑地環境情報学研究室
+      <small>Green Space &amp; Environmental Informatics Lab.</small>
+    </a>
+    <ul class="g-nav-menu" id="navMenu">
+      <li><a href="index.html">研究紹介</a></li>
+      <li><a href="publications.html">研究業績</a></li>
+      <li><a href="members.html" class="active">メンバー</a></li>
+      <li><a href="links.html">いろいろ</a></li>
+      <li><a href="access.html">連絡先/アクセス</a></li>
+    </ul>
+    <button class="ham-btn" id="hamBtn" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="container page-header">
+  <h1 class="page-title">メンバー</h1>
+  <p class="page-title-en">Laboratory Members</p>
+</div>
+
+<main class="container">
+
+  <!-- PI 梅木 清 -->
+  <div class="profile-card">
+    <div class="profile-left">
+      <div class="photo-placeholder">梅</div>
+      <div class="profile-name">
+        <div class="profile-name-ja">梅木 清</div>
+        <div class="profile-name-en">Kiyoshi Umeki</div>
+      </div>
+      <div class="profile-links">
+        <a href="https://www.h.chiba-u.jp/staff/umeki_k.html" target="_blank" rel="noopener">大学HP</a>
+        <a href="https://researchmap.jp/kiyoshiumeki" target="_blank" rel="noopener">researchmap</a>
+        <a href="https://orcid.org/0000-0003-4412-2117" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </div>
+    <div class="profile-right">
+      <div class="profile-section">
+        <div class="profile-sec-title">Career</div>
+        <ul class="career-list">
+          <li class="career-item">
+            <span class="career-period">2021年4月 – 現在</span>
+            <span class="career-place">千葉大学 園芸学研究院 教授</span>
+          </li>
+          <li class="career-item">
+            <span class="career-period">2007年4月 – 2021年3月</span>
+            <span class="career-place">千葉大学 大学院園芸学研究科 准教授</span>
+          </li>
+          <li class="career-item">
+            <span class="career-period">2003年11月 – 2007年3月</span>
+            <span class="career-place">千葉大学 大学院自然科学研究科 助教授</span>
+          </li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <div class="profile-sec-title">Education</div>
+        <ul class="edu-list">
+          <li class="edu-item">博士（理学）, 1995年3月 京都大学</li>
+          <li class="edu-item">理学修士, 1989年3月 京都大学</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <div class="profile-sec-title">Research Topics</div>
+        <ul class="theme-list">
+          <li>森林動態の計測・モデル化・シミュレーションに関する研究</li>
+          <li>機能的・構造的樹木モデルの開発</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PI 執行 宣彦 -->
+  <div class="profile-card">
+    <div class="profile-left">
+      <img class="profile-photo" src="assets/image/member/nobuhiko-shigyo.jpeg" alt="執行 宣彦">
+      <div class="profile-name">
+        <div class="profile-name-ja">執行 宣彦</div>
+        <div class="profile-name-en">Nobuhiko Shigyo</div>
+      </div>
+      <div class="profile-links">
+        <a href="https://www.h.chiba-u.jp/staff/post_31.html" target="_blank" rel="noopener">大学HP</a>
+        <a href="https://researchmap.jp/Nobuhiko_Shigyo" target="_blank" rel="noopener">researchmap</a>
+        <a href="https://scholar.google.co.jp/citations?user=1rv_LlMAAAAJ&hl=ja" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-7428-4902" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+    <div class="profile-right">
+      <div class="profile-section">
+        <div class="profile-sec-title">Career</div>
+        <ul class="career-list">
+          <li class="career-item">
+            <span class="career-period">2026年1月 – 現在</span>
+            <span class="career-place">千葉大学 園芸学研究院 講師</span>
+          </li>
+          <li class="career-item">
+            <span class="career-period">2025年4月 – 2025年12月</span>
+            <span class="career-place">（国研）森林研究・整備機構 森林総合研究所 主任研究員</span>
+          </li>
+          <li class="career-item">
+            <span class="career-period">2023年4月 – 2025年3月</span>
+            <span class="career-place">（国研）森林研究・整備機構 森林総合研究所 研究員</span>
+          </li>
+          <li class="career-item">
+            <span class="career-period">2020年4月 – 2023年3月</span>
+            <span class="career-place">（国研）森林研究・整備機構 森林総合研究所 テニュア型任期付研究員</span>
+          </li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <div class="profile-sec-title">Education</div>
+        <ul class="edu-list">
+          <li class="edu-item">博士（農学）, 2019年3月 東京大学</li>
+          <li class="edu-item">修士（農学）, 2016年3月 千葉大学</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <div class="profile-sec-title">Research Topics</div>
+        <ul class="theme-list">
+          <li>多様な時空間スケールにおける土壌微生物群集の動態</li>
+          <li>落葉分解過程における微生物群集生態</li>
+          <li>森林の窒素循環プロセスにおける微生物群集の役割</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Students -->
+  <div class="member-card">
+    <div class="member-card-hd">学生メンバー</div>
+    <div class="member-card-bd">
+      <ul class="member-list">
+        <li class="member-item">
+          <span class="member-name">セツ テンジュン</span>
+          <span class="member-info">Xue Tianrun — M.Sc., D1</span>
+          <span class="member-theme">日本国内の天然林と人工林におけるベイジアン動的線形モデルによる森林リモートセンシングデータの解析</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">清水 将太</span>
+          <span class="member-info">Shota Shimizu — B.Sc., M2</span>
+          <span class="member-theme">奥秩父山地における環境要因の真菌・細菌量に対する影響</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">光延 祥汰</span>
+          <span class="member-info">Shota Mitsunobu — B.Sc., M1</span>
+          <span class="member-theme">生存時間分析を用いてLiDAR測定データから樹木の葉面積密度３次元分布を推定する</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">小笠原 圭佑</span>
+          <span class="member-info">Keisuke Ogasawara — B.Sc., M1</span>
+          <span class="member-theme">環境変動に対応した人工林の樹高生長時系列解析</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">堀越 海翔</span>
+          <span class="member-info">Kaito Horikoshi — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">松永 彩花</span>
+          <span class="member-info">Ayaka Matsunaga — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">池田 真唯子</span>
+          <span class="member-info">Maiko Ikeda — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">中川 琉喜</span>
+          <span class="member-info">Nakagawa Ryuki — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">下山 夏季</span>
+          <span class="member-info">Natsuki Shimoyama — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">永島 壮一郎</span>
+          <span class="member-info">Soichiro Nagashima — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">津浦 芭音子</span>
+          <span class="member-info">Hanoko Tsuura — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">清水 悠有</span>
+          <span class="member-info">Yu Shimizu — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">菊地 晴香</span>
+          <span class="member-info">Haruka Kikuchi — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">北澤 巧也</span>
+          <span class="member-info">Takuya Kitazawa — B4</span>
+          <span class="member-theme">未定</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">尹 正仁</span>
+          <span class="member-info">Yoon Jungin — 研究生</span>
+          <span class="member-theme">未定</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Alumni -->
+  <div class="member-card">
+    <div class="member-card-hd">以前のメンバー</div>
+    <div class="member-card-bd">
+      <ul class="member-list">
+        <li class="member-item">
+          <span class="member-name">岩田 宰</span>
+          <span class="member-info">Tsukasa Iwata — Ph.D.</span>
+          <span class="member-theme">屋上緑化の生態系サービス向上に資する植物種と植栽基盤材料の検討</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">佐藤 宏紀</span>
+          <span class="member-info">Hiroki Sato — M.Sc.</span>
+          <span class="member-theme">構造方程式モデリングによるシカ食害後の下層植生回復の因果関係の解明</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">堀尾 涼佳</span>
+          <span class="member-info">Suzuka Horio — B.Sc.</span>
+          <span class="member-theme">環境要因を考慮した階層ベイズモデルによる漆生産過程の解析</span>
+        </li>
+        <li class="member-item">
+          <span class="member-name">小竹 涼介</span>
+          <span class="member-info">Ryosuke Kotake — B.Sc.</span>
+          <span class="member-theme">奥秩父山地における樹木の種子生産量</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <nav class="footer-links">
+      <a href="index.html">研究紹介</a>
+      <a href="publications.html">研究業績</a>
+      <a href="members.html">メンバー</a>
+      <a href="links.html">いろいろ</a>
+      <a href="access.html">連絡先/アクセス</a>
+    </nav>
+    <span class="footer-copy">&copy; <span id="y"></span> Green Space &amp; Environmental Informatics Laboratory</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const hamBtn = document.getElementById('hamBtn');
+const navMenu = document.getElementById('navMenu');
+hamBtn?.addEventListener('click', () => navMenu.classList.toggle('open'));
+document.addEventListener('click', e => {
+  if (!navMenu.contains(e.target) && !hamBtn.contains(e.target))
+    navMenu.classList.remove('open');
+});
+
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || a.hasAttribute('target')) return;
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const trans = document.createElement('div');
+    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s cubic-bezier(0.7,0,0.3,1)';
+    document.body.appendChild(trans);
+    requestAnimationFrame(() => {
+      trans.style.transform = 'scaleY(1)';
+      setTimeout(() => { window.location.href = href; }, 520);
+    });
+  });
+});
+</script>
+</body>
+</html>

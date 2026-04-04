@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>いろいろ | 緑地環境情報学研究室</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="インタビュー・プレスリリース・所属学会・担当講義などのリンク集">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d110f;
+    --bg2: #151a17;
+    --bg3: #1a2118;
+    --accent: #3e604e;
+    --accent-light: #5a8a6e;
+    --text: #e2e8f0;
+    --text-dim: #8a9a92;
+    --gold: #b09a6a;
+    --gold-light: #d4c49a;
+    --gold-dim: rgba(176, 154, 106, 0.15);
+    --border: rgba(176, 154, 106, 0.12);
+    --link: #8fc5b0;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    min-height: 100vh; overflow-x: hidden;
+    animation: pageFadeIn 0.7s ease forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  a { color: var(--link); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--gold-light); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── Background ── */
+  .bg-grain {
+    position: fixed; inset: 0; z-index: 1; opacity: 0.035; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+  .bg-radial {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(62,96,78,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 70%, rgba(176,154,106,0.05) 0%, transparent 60%);
+  }
+
+  /* ── Corner marks ── */
+  .corner-mark { position: fixed; z-index: 10; width: 32px; height: 32px; pointer-events: none; }
+  .corner-mark::before, .corner-mark::after { content: ''; position: absolute; background: var(--gold); opacity: 0.25; }
+  .corner-mark.tl { top: 16px; left: 16px; }
+  .corner-mark.tl::before { top: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.tl::after  { top: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.tr { top: 16px; right: 16px; }
+  .corner-mark.tr::before { top: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.tr::after  { top: 0; right: 0; width: 100%; height: 1px; }
+  .corner-mark.bl { bottom: 16px; left: 16px; }
+  .corner-mark.bl::before { bottom: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.bl::after  { bottom: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.br { bottom: 16px; right: 16px; }
+  .corner-mark.br::before { bottom: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.br::after  { bottom: 0; right: 0; width: 100%; height: 1px; }
+  @media (max-width: 768px) { .corner-mark { width: 20px; height: 20px; } }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(13, 17, 15, 0.94);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .container { width: min(1080px, 92vw); margin: 0 auto; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .brand {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(13px, 2vw, 17px); color: var(--gold); font-weight: 700;
+    letter-spacing: 0.06em; text-decoration: none; display: block; transition: color 0.3s;
+  }
+  .brand:hover { color: var(--gold-light); }
+  .brand small {
+    display: block; font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px; font-weight: 300; letter-spacing: 0.28em;
+    color: var(--text-dim); text-transform: uppercase; margin-top: 3px;
+  }
+  .g-nav-menu {
+    list-style: none; display: flex; gap: 2px;
+    font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 500;
+  }
+  .g-nav-menu a {
+    display: block; padding: 6px 10px; color: var(--text-dim);
+    letter-spacing: 0.08em; border-radius: 4px; transition: color 0.3s, background 0.3s;
+  }
+  .g-nav-menu a:hover, .g-nav-menu a.active { color: var(--gold); background: var(--gold-dim); }
+  .ham-btn {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px; z-index: 51;
+  }
+  .ham-btn span { display: block; width: 22px; height: 1px; background: var(--text-dim); }
+  @media (max-width: 760px) { .g-nav-menu { display: none; } .ham-btn { display: flex; } }
+  .g-nav-menu.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 0; right: 0; bottom: 0; width: 240px;
+    background: rgba(13,17,15,0.97); border-left: 1px solid var(--gold-dim);
+    padding: 64px 24px 24px; gap: 4px; z-index: 50;
+  }
+  .g-nav-menu.open a { padding: 12px 14px; }
+
+  /* ── Page header ── */
+  .page-header {
+    padding: 48px 0 36px; position: relative; z-index: 5;
+    border-bottom: 1px solid var(--gold-dim); margin-bottom: 36px;
+  }
+  .page-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    letter-spacing: 0.2em; color: var(--text);
+    position: relative; display: inline-block; padding-bottom: 16px;
+  }
+  .page-title::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 55%;
+    height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .page-title-en {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--text-dim); margin-top: 10px;
+  }
+
+  /* ── Main ── */
+  main { padding: 0 0 72px; position: relative; z-index: 5; }
+
+  /* ── Card ── */
+  .card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+  }
+  .card-hd {
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
+    font-family: 'Zen Old Mincho', serif; font-size: 16px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-hd::before {
+    content: ''; display: block; width: 3px; height: 16px;
+    background: var(--gold); border-radius: 2px; opacity: 0.8; flex-shrink: 0;
+  }
+  .card-bd { padding: 20px 24px; }
+
+  /* Sub-heading in card */
+  .card-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin: 20px 0 12px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--gold-dim);
+  }
+  .card-sub:first-child { margin-top: 0; }
+
+  /* Link list */
+  .link-list { display: grid; gap: 0; }
+  .link-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 11px 0; border-bottom: 1px solid var(--border);
+    font-size: 14px; line-height: 1.7;
+  }
+  .link-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .link-item::before {
+    content: '–';
+    color: var(--gold); opacity: 0.6;
+    flex-shrink: 0; padding-top: 2px;
+  }
+
+  /* 2-column grid for smaller sections */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .two-col .card { margin-bottom: 0; }
+  @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Courses list */
+  .course-list { list-style: none; display: grid; gap: 0; }
+  .course-item {
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    font-size: 14px; line-height: 1.7;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .course-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .course-item::before { content: '–'; color: var(--gold); opacity: 0.6; flex-shrink: 0; }
+  .course-grade { font-size: 11px; color: var(--text-dim); white-space: nowrap; margin-top: 3px; }
+
+  .card-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
+  .past-grants {
+    margin-top: 16px;
+  }
+  
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--gold-dim); padding: 24px 0;
+    position: relative; z-index: 10;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .footer-links a { font-size: 12px; letter-spacing: 0.08em; color: var(--text-dim); }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+
+<div class="bg-grain"></div>
+<div class="bg-radial"></div>
+<div class="corner-mark tl"></div>
+<div class="corner-mark tr"></div>
+<div class="corner-mark bl"></div>
+<div class="corner-mark br"></div>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      緑地環境情報学研究室
+      <small>Green Space &amp; Environmental Informatics Lab.</small>
+    </a>
+    <ul class="g-nav-menu" id="navMenu">
+      <li><a href="index.html">研究紹介</a></li>
+      <li><a href="publications.html">研究業績</a></li>
+      <li><a href="members.html">メンバー</a></li>
+      <li><a href="links.html" class="active">いろいろ</a></li>
+      <li><a href="access.html">連絡先/アクセス</a></li>
+    </ul>
+    <button class="ham-btn" id="hamBtn" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="container page-header">
+  <h1 class="page-title">いろいろ</h1>
+  <p class="page-title-en">Misc. Links</p>
+</div>
+
+<main class="container">
+
+  <!-- Interviews / PR -->
+  <div class="card">
+    <div class="card-hd">インタビュー、プレスリリース、会報など</div>
+    <div class="card-bd">
+      <div class="link-list">
+        <div class="link-item">
+          <a href="https://terra-rium.com/ja/articles/8739/" target="_blank" rel="noopener">TERRARIUM 研究者インタビュー「ニホンジカと森林生態系の未来を探る　千葉大学 梅木教授にインタビュー」</a>
+        </div>
+        <div class="link-item">
+          <a href="https://www.a.u-tokyo.ac.jp/topics/topics_20240513-1.html" target="_blank" rel="noopener">プレスリリース「その場所ならではの土壌微生物の構成が落葉分解の進行の鍵 ――落葉分解のホームフィールド・アドヴァンテージ現象を解明――」</a>
+        </div>
+        <div class="link-item">
+          <a href="https://af-info.or.jp/af_magazine/004.html" target="_blank" rel="noopener">旭硝子財団　地球環境マガジン「シカの食害による森林生態系への影響を調査。課題解決への貢献は、研究者の重要な仕事」</a>
+        </div>
+        <div class="link-item">
+          <a href="https://www.ffpri.go.jp/research/saizensen/2022/20221024.html" target="_blank" rel="noopener">研究成果「表層土壌の細菌類の組成と機能は斜面の上と下で大きく違う」</a>
+        </div>
+        <div class="link-item">
+          <a href="https://www.ffpri.go.jp/research/saizensen/2021/20210707-01.html" target="_blank" rel="noopener">研究成果「山での土壌菌類の多様性の標高変化は菌類のグループによって正反対になる」</a>
+        </div>
+        <div class="link-item">
+          <a href="https://www.ffpri.go.jp/research/saizensen/2019/20191002-01.html" target="_blank" rel="noopener">研究成果「花が咲き始めた樹木は背丈の伸びが緩やかになる」</a>
+        </div>
+        <div class="link-item">
+          <a href="https://archive.af-info.or.jp/publication/doc/afnews_50J.pdf" target="_blank" rel="noopener">公益財団法人旭硝子財団　at News 助成研究便り</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grants -->
+  <div class="card">
+    <div class="card-hd">研究助成</div>
+    <div class="card-bd">
+
+      <div class="card-sub">現在進行中の課題</div>
+      <div class="link-list">
+        <div class="link-item">
+          <a href="https://www.jst.go.jp/kisoken/act-x/project/111F009/111F009_2025.html" target="_blank" rel="noopener">国立研究開発法人科学技術振興機構 ACT-X【生命と情報】「多様性と独自性を統合した土壌微生物叢のベイズ適応的サンプリング」（2025年10月–2028年3月、代表：執行）</a>
+        </div>
+        <div class="link-item">
+          <a href="https://www.nihonseimei-zaidan.or.jp/kankyo/05.html" target="_blank" rel="noopener">ニッセイ財団 環境問題研究助成 若手研究・奨励研究「非共生窒素固定菌の林内循環仮説の検証：持続的森林管理に向けて」（2025年10月–2026年9月、代表：執行）</a>
+        </div>
+        <div class="link-item">
+          <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-24H00783/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 基盤研究(A)「急激な気候変動による東アジア森林ベルトの生態系の変化を新しい統合モデルで予測する」（2024年4月–2027年3月、分担：梅木）</a>
+        </div>
+        <div class="link-item">
+          <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-23K17070/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 若手研究「樹木の標高適応に地下部微生物群集が果たす役割の解明」（2023年4月–2027年3月、代表：執行）</a>
+        </div>
+        <div class="link-item">
+          <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-23K28276/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 基盤研究(B)「環境変動に伴う森林の植生衰退が土壌レガシー効果を引き起こすメカニズムの解明」（2023年4月–2027年3月、分担：梅木・執行）</a>
+        </div>
+        <div class="link-item">
+          <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-23K25043/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 基盤研究(B)「撹乱を受けた森林のレジリエンスに寄与する生物間相互作用・機能群を特定する」（2022年4月–2026年3月、代表：梅木）</a>
+        </div>
+      </div>
+
+      <details class="past-grants">
+        <summary class="card-sub" style="cursor: pointer; user-select: none;">過去に行われた課題（代表のみ）</summary>
+        <div class="link-list">
+          <div class="link-item">
+            森林総合研究所 交付金プロジェクト２「気候変動がスギ落葉の窒素固定微生物群集の活性に及ぼす影響とそのメカニズム：微生物群集組成の定量解析と温度・水分条件の操作実験による解明」（2022年7月–2024年3月、代表：執行）
+          </div>
+          <div class="link-item">
+            <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-20K20003/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 若手研究「森林の落葉多様性が分解速度を促進するプロセスの解明」（2020年4月–2023年3月、代表：執行）</a>
+          </div>
+          <div class="link-item">
+            <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-18J14438/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 特別研究員奨励費「森林生態系における微生物間相互作用が土壌有機物の分解速度に及ぼす影響の解明」（2018年4月–2020年3月、代表：執行）</a>
+          </div>
+          <div class="link-item">
+            <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K07834/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 基盤研究(C)「進化的トレードオフ・環境応答を考慮して非損傷個体からの萌芽発生の重要性を解明する」（2017年4月–2020年3月、代表：梅木）</a>
+          </div>
+          <div class="link-item">
+            公益財団法人日本財団 笹川科学研究助成「地球温暖化が土壌及びリター層のセルロース分解機能に及ぼす影響 -標高に沿った環境と微生物群集の変化に焦点をあてて-」（2016年4月–2017年3月、代表：執行）
+          </div>
+          <div class="link-item">
+            旭硝子財団 環境研究 近藤次郎グラント「シカによる摂食圧力を受けた森林における鳥類群集の景観レベルの動態と回復に関する研究」（2015年4月–2017年3月、代表：梅木）
+          </div>
+          <div class="link-item">
+            <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25450205/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 基盤研究(C)「機能的・構造的樹木モデルを利用した稚樹の生態の統合的理解」（2013年4月–2015年3月、代表：梅木）</a>
+          </div>
+          <div class="link-item">
+            新技術開発財団 植物研究助成「地上型レーザーによる樹木のバイオマス量と物質生産量の把握」（2008年4月–2009年3月、代表：梅木）
+          </div>
+          <div class="link-item">
+            <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-18580139/" target="_blank" rel="noopener">日本学術振興会 科学研究費助成事業 基盤研究(C)「GIS上で動作する森林動態予測・森林管理支援システムの開発」（2006年4月–2007年3月、代表：梅木）</a>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- Societies + Courses (2 columns) -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-hd">所属学会</div>
+      <div class="card-bd">
+        <div class="link-list">
+          <div class="link-item"><a href="https://www.forestry.jp/" target="_blank" rel="noopener">日本森林学会 / The Japanese Forest Society（梅木・執行）</a></div>
+          <div class="link-item"><a href="https://www.esj.ne.jp/esj/" target="_blank" rel="noopener">日本生態学会 / The Ecological Society of Japan（梅木・執行）</a></div>
+          <div class="link-item"><a href="https://bsj.or.jp/" target="_blank" rel="noopener">日本植物学会 / The Botanical Society of Japan（梅木）</a></div>
+          <div class="link-item"><a href="https://jale-japan.org/" target="_blank" rel="noopener">日本景観生態学会 / Japan Association for Landscape Ecology（梅木）</a></div>
+          <div class="link-item"><a href="https://www.ceis.or.jp/" target="_blank" rel="noopener">環境情報科学センター / Center for Environmental Information Science（梅木）</a></div>
+          <div class="link-item"><a href="https://shinrin-ritchi.jp/" target="_blank" rel="noopener">森林立地学会 / The Japanese Society of Forest Environment（執行）</a></div>
+          <div class="link-item"><a href="https://asm.org/" target="_blank" rel="noopener">アメリカ微生物学会 / American Society for Microbiology（執行）</a></div>
+          <div class="link-item"><a href="https://isme-microbes.org/" target="_blank" rel="noopener">国際微生物生態学会 / International Society for Microbial Ecology（執行）</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">担当講義</div>
+      <div class="card-bd">
+        <ul class="course-list">
+          <li class="course-item"><span>生物学B</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>緑の環境を育む</span><span class="course-grade">（１年次）</span></li>
+          <li class="course-item"><span>生物学基礎実験D</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>植物形態分類学演習</span><span class="course-grade">（１年次）</span></li>
+          <li class="course-item"><span>緑地環境学実習</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>緑地植物学</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>環境空間情報学</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>森林管理学</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>緑地科学演習</span><span class="course-grade">（３年次）</span></li>
+          <li class="course-item"><span>緑地科学実験実習Ⅰ</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>緑地科学実験実習Ⅱ</span><span class="course-grade">（２年次）</span></li>
+          <li class="course-item"><span>緑地科学実験実習Ⅲ</span><span class="course-grade">（３年次）</span></li>
+          <li class="course-item"><span>緑地科学実験実習Ⅳ</span><span class="course-grade">（３年次）</span></li>
+          <li class="course-item"><span>ランドスケーププロジェクト演習B</span><span class="course-grade">（院１年次）</span></li>
+          <li class="course-item"><span>森林管理学特論</span><span class="course-grade">（院１年次）</span></li>
+        </ul>
+        <p class="card-note">※ 授業内容・開講時期は変更になる場合があります。最新のシラバスをご確認ください。</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <nav class="footer-links">
+      <a href="index.html">研究紹介</a>
+      <a href="publications.html">研究業績</a>
+      <a href="members.html">メンバー</a>
+      <a href="links.html">いろいろ</a>
+      <a href="access.html">連絡先/アクセス</a>
+    </nav>
+    <span class="footer-copy">&copy; <span id="y"></span> Green Space &amp; Environmental Informatics Laboratory</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const hamBtn = document.getElementById('hamBtn');
+const navMenu = document.getElementById('navMenu');
+hamBtn?.addEventListener('click', () => navMenu.classList.toggle('open'));
+document.addEventListener('click', e => {
+  if (!navMenu.contains(e.target) && !hamBtn.contains(e.target))
+    navMenu.classList.remove('open');
+});
+
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || a.hasAttribute('target')) return;
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const trans = document.createElement('div');
+    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s cubic-bezier(0.7,0,0.3,1)';
+    document.body.appendChild(trans);
+    requestAnimationFrame(() => {
+      trans.style.transform = 'scaleY(1)';
+      setTimeout(() => { window.location.href = href; }, 520);
+    });
+  });
+});
+</script>
+</body>
+</html>

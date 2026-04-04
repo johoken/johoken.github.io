@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>連絡先 / アクセス | 緑地環境情報学研究室</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="緑地環境情報学研究室の連絡先とアクセス（住所・交通案内・地図）">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d110f;
+    --bg2: #151a17;
+    --bg3: #1a2118;
+    --accent: #3e604e;
+    --accent-light: #5a8a6e;
+    --text: #e2e8f0;
+    --text-dim: #8a9a92;
+    --gold: #b09a6a;
+    --gold-light: #d4c49a;
+    --gold-dim: rgba(176, 154, 106, 0.15);
+    --border: rgba(176, 154, 106, 0.12);
+    --link: #8fc5b0;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    min-height: 100vh; overflow-x: hidden;
+    animation: pageFadeIn 0.7s ease forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  a { color: var(--link); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--gold-light); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── Background ── */
+  .bg-grain {
+    position: fixed; inset: 0; z-index: 1; opacity: 0.035; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+  .bg-radial {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(62,96,78,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 70%, rgba(176,154,106,0.05) 0%, transparent 60%);
+  }
+
+  /* ── Corner marks ── */
+  .corner-mark { position: fixed; z-index: 10; width: 32px; height: 32px; pointer-events: none; }
+  .corner-mark::before, .corner-mark::after { content: ''; position: absolute; background: var(--gold); opacity: 0.25; }
+  .corner-mark.tl { top: 16px; left: 16px; }
+  .corner-mark.tl::before { top: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.tl::after  { top: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.tr { top: 16px; right: 16px; }
+  .corner-mark.tr::before { top: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.tr::after  { top: 0; right: 0; width: 100%; height: 1px; }
+  .corner-mark.bl { bottom: 16px; left: 16px; }
+  .corner-mark.bl::before { bottom: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.bl::after  { bottom: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.br { bottom: 16px; right: 16px; }
+  .corner-mark.br::before { bottom: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.br::after  { bottom: 0; right: 0; width: 100%; height: 1px; }
+  @media (max-width: 768px) { .corner-mark { width: 20px; height: 20px; } }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(13, 17, 15, 0.94);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .container { width: min(1080px, 92vw); margin: 0 auto; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .brand {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(13px, 2vw, 17px); color: var(--gold); font-weight: 700;
+    letter-spacing: 0.06em; text-decoration: none; display: block; transition: color 0.3s;
+  }
+  .brand:hover { color: var(--gold-light); }
+  .brand small {
+    display: block; font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px; font-weight: 300; letter-spacing: 0.28em;
+    color: var(--text-dim); text-transform: uppercase; margin-top: 3px;
+  }
+  .g-nav-menu {
+    list-style: none; display: flex; gap: 2px;
+    font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 500;
+  }
+  .g-nav-menu a {
+    display: block; padding: 6px 10px; color: var(--text-dim);
+    letter-spacing: 0.08em; border-radius: 4px; transition: color 0.3s, background 0.3s;
+  }
+  .g-nav-menu a:hover, .g-nav-menu a.active { color: var(--gold); background: var(--gold-dim); }
+  .ham-btn {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px; z-index: 51;
+  }
+  .ham-btn span { display: block; width: 22px; height: 1px; background: var(--text-dim); }
+  @media (max-width: 760px) { .g-nav-menu { display: none; } .ham-btn { display: flex; } }
+  .g-nav-menu.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 0; right: 0; bottom: 0; width: 240px;
+    background: rgba(13,17,15,0.97); border-left: 1px solid var(--gold-dim);
+    padding: 64px 24px 24px; gap: 4px; z-index: 50;
+  }
+  .g-nav-menu.open a { padding: 12px 14px; }
+
+  /* ── Page header ── */
+  .page-header {
+    padding: 48px 0 36px; position: relative; z-index: 5;
+    border-bottom: 1px solid var(--gold-dim); margin-bottom: 36px;
+  }
+  .page-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    letter-spacing: 0.2em; color: var(--text);
+    position: relative; display: inline-block; padding-bottom: 16px;
+  }
+  .page-title::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 55%;
+    height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .page-title-en {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--text-dim); margin-top: 10px;
+  }
+
+  /* ── Main ── */
+  main { padding: 0 0 72px; position: relative; z-index: 5; }
+
+  /* ── Card ── */
+  .card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+  }
+  .card-hd {
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
+    font-family: 'Zen Old Mincho', serif; font-size: 16px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-hd::before {
+    content: ''; display: block; width: 3px; height: 16px;
+    background: var(--gold); border-radius: 2px; opacity: 0.8; flex-shrink: 0;
+  }
+  .card-bd { padding: 20px 24px; line-height: 1.9; }
+  .card-bd p { margin-bottom: 14px; }
+  .card-bd p:last-child { margin-bottom: 0; }
+
+  /* Sub-heading inside card */
+  .card-sub {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--gold-light); letter-spacing: 0.1em;
+    margin: 20px 0 10px;
+  }
+  .card-sub:first-child { margin-top: 0; }
+
+  /* Address block */
+  .address-block { margin-bottom: 16px; }
+  .address-dim { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+  .address-mail {
+    margin-top: 12px; font-size: 14px; line-height: 1.9;
+  }
+  .address-note { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+
+  /* Transportation box */
+  .trans-box {
+    background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 16px; margin-bottom: 16px;
+    font-size: 14px; line-height: 1.9;
+  }
+  .trans-row {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 5px 0; border-bottom: 1px solid var(--border);
+  }
+  .trans-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .trans-icon { color: var(--gold); font-size: 13px; flex-shrink: 0; padding-top: 2px; }
+
+  /* Map */
+  .map-wrap {
+    position: relative; width: 100%;
+    aspect-ratio: 16/9; border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+    background: var(--bg3); margin-bottom: 16px;
+  }
+  .map-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* External link button */
+  .ext-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px;
+    border: 1px solid var(--gold-dim); border-radius: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: var(--gold); letter-spacing: 0.08em;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .ext-btn:hover { background: var(--gold-dim); color: var(--gold-light); border-color: var(--gold); }
+  .ext-btn::after { content: '→'; font-size: 12px; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--gold-dim); padding: 24px 0;
+    position: relative; z-index: 10;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .footer-links a { font-size: 12px; letter-spacing: 0.08em; color: var(--text-dim); }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+
+<div class="bg-grain"></div>
+<div class="bg-radial"></div>
+<div class="corner-mark tl"></div>
+<div class="corner-mark tr"></div>
+<div class="corner-mark bl"></div>
+<div class="corner-mark br"></div>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      緑地環境情報学研究室
+      <small>Green Space &amp; Environmental Informatics Lab.</small>
+    </a>
+    <ul class="g-nav-menu" id="navMenu">
+      <li><a href="index.html">研究紹介</a></li>
+      <li><a href="publications.html">研究業績</a></li>
+      <li><a href="members.html">メンバー</a></li>
+      <li><a href="links.html">いろいろ</a></li>
+      <li><a href="access.html" class="active">連絡先/アクセス</a></li>
+    </ul>
+    <button class="ham-btn" id="hamBtn" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="container page-header">
+  <h1 class="page-title">連絡先 / アクセス</h1>
+  <p class="page-title-en">Contact &amp; Access</p>
+</div>
+
+<main class="container">
+
+  <!-- Affiliation -->
+  <div class="card">
+    <div class="card-hd">所属</div>
+    <div class="card-bd">
+      <p>当研究室は千葉大学 <a href="https://www.h.chiba-u.jp/index.html" target="_blank" rel="noopener">大学院園芸学研究院・大学院園芸学研究科・園芸学部</a>に所属しています。大学院生は<a href="https://www.h.chiba-u.jp/academics/graduate/course/index.html" target="_blank" rel="noopener">園芸学研究科 ランドスケープ学コース</a>、学部生は<a href="https://www.h.chiba-u.jp/academics/faculty/department/green_environment.html" target="_blank" rel="noopener">緑地環境学科 緑地科学プログラム</a>に所属します。当研究室では、一緒に研究を行っていただけるポスドク・大学院生を募集しています。研究テーマに関心をお持ちの方、大学院への進学をお考えの方は、お気軽にお問い合わせください。また、大学院入試に関する情報は<a href="https://www.h.chiba-u.jp/admission/graduate/index.html" target="_blank" rel="noopener">入試案内</a>をご覧ください。</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="card">
+    <div class="card-hd">連絡先</div>
+    <div class="card-bd">
+      <div class="card-sub">緑地環境情報学研究室</div>
+      <div class="address-block">
+        <p class="address-dim">千葉大学大学院園芸学研究院</p>
+        <p>〒271-0092<br>千葉県松戸市松戸 648 D棟5階</p>
+      </div>
+      <div class="address-mail">
+        梅木: D棟 502 室　E-mail: umeki [at] faculty.chiba-u.jp<br>
+        執行: D棟 503 室　E-mail: shigyo [at] chiba-u.jp
+      </div>
+      <p class="address-note">[at] は @ に置き換えてください。</p>
+    </div>
+  </div>
+
+  <!-- Access -->
+  <div class="card">
+    <div class="card-hd">アクセス</div>
+    <div class="card-bd">
+      <div class="card-sub">交通のご案内</div>
+      <div class="trans-box">
+        <div class="trans-row">
+          <span class="trans-icon">◆</span>
+          <span>東京駅から上野東京ラインで直通 約27分 → JR 松戸駅下車</span>
+        </div>
+        <div class="trans-row">
+          <span class="trans-icon">◆</span>
+          <span>JR 松戸駅 東口から徒歩 約15分</span>
+        </div>
+      </div>
+      <div class="card-sub">地図</div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4421.804786926567!2d139.89718286128067!3d35.776571833299364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601884560a554521%3A0x3169ff4bb1cf4e5f!2z5Y2D6JGJ5aSn5a2mIOWckuiKuOWtpumDqA!5e0!3m2!1sja!2sjp!4v1772501984511!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a class="ext-btn" href="https://www.h.chiba-u.jp/access/index.html" target="_blank" rel="noopener noreferrer">詳しいアクセス案内</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <nav class="footer-links">
+      <a href="index.html">研究紹介</a>
+      <a href="publications.html">研究業績</a>
+      <a href="members.html">メンバー</a>
+      <a href="links.html">いろいろ</a>
+      <a href="access.html">連絡先/アクセス</a>
+    </nav>
+    <span class="footer-copy">&copy; <span id="y"></span> Green Space &amp; Environmental Informatics Laboratory</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const hamBtn = document.getElementById('hamBtn');
+const navMenu = document.getElementById('navMenu');
+hamBtn?.addEventListener('click', () => navMenu.classList.toggle('open'));
+document.addEventListener('click', e => {
+  if (!navMenu.contains(e.target) && !hamBtn.contains(e.target))
+    navMenu.classList.remove('open');
+});
+
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || a.hasAttribute('target')) return;
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const trans = document.createElement('div');
+    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s cubic-bezier(0.7,0,0.3,1)';
+    document.body.appendChild(trans);
+    requestAnimationFrame(() => {
+      trans.style.transform = 'scaleY(1)';
+      setTimeout(() => { window.location.href = href; }, 520);
+    });
+  });
+});
+</script>
+</body>
+</html>

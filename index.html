@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>研究紹介 | 緑地環境情報学研究室</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="森林生態系を多階層で研究：土壌微生物・落葉分解・窒素固定、森林動態の計測・モデル化、シカ採食の影響解析など。">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d110f;
+    --bg2: #151a17;
+    --bg3: #1a2118;
+    --accent: #3e604e;
+    --accent-light: #5a8a6e;
+    --text: #e2e8f0;
+    --text-dim: #8a9a92;
+    --gold: #b09a6a;
+    --gold-light: #d4c49a;
+    --gold-dim: rgba(176, 154, 106, 0.15);
+    --border: rgba(176, 154, 106, 0.12);
+    --link: #8fc5b0;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    animation: pageFadeIn 0.7s ease forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  a { color: var(--link); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--gold-light); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── Background ── */
+  .bg-grain {
+    position: fixed; inset: 0; z-index: 1;
+    opacity: 0.035; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+  .bg-radial {
+    position: fixed; inset: 0; z-index: 1;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(62,96,78,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 70%, rgba(176,154,106,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ── Corner marks ── */
+  .corner-mark {
+    position: fixed; z-index: 10;
+    width: 32px; height: 32px;
+    pointer-events: none;
+  }
+  .corner-mark::before, .corner-mark::after {
+    content: ''; position: absolute;
+    background: var(--gold); opacity: 0.25;
+  }
+  .corner-mark.tl { top: 16px; left: 16px; }
+  .corner-mark.tl::before { top: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.tl::after  { top: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.tr { top: 16px; right: 16px; }
+  .corner-mark.tr::before { top: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.tr::after  { top: 0; right: 0; width: 100%; height: 1px; }
+  .corner-mark.bl { bottom: 16px; left: 16px; }
+  .corner-mark.bl::before { bottom: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.bl::after  { bottom: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.br { bottom: 16px; right: 16px; }
+  .corner-mark.br::before { bottom: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.br::after  { bottom: 0; right: 0; width: 100%; height: 1px; }
+  @media (max-width: 768px) { .corner-mark { width: 20px; height: 20px; } }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(13, 17, 15, 0.94);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .container { width: min(1080px, 92vw); margin: 0 auto; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .brand {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(13px, 2vw, 17px);
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+  }
+  .brand:hover { color: var(--gold-light); }
+  .brand small {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px; font-weight: 300;
+    letter-spacing: 0.28em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .g-nav-menu {
+    list-style: none; display: flex; gap: 2px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px; font-weight: 500;
+  }
+  .g-nav-menu a {
+    display: block; padding: 6px 10px;
+    color: var(--text-dim); letter-spacing: 0.08em;
+    border-radius: 4px;
+    transition: color 0.3s, background 0.3s;
+  }
+  .g-nav-menu a:hover, .g-nav-menu a.active {
+    color: var(--gold); background: var(--gold-dim);
+  }
+  /* Hamburger */
+  .ham-btn {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px; z-index: 51;
+  }
+  .ham-btn span { display: block; width: 22px; height: 1px; background: var(--text-dim); transition: all 0.3s; }
+  @media (max-width: 760px) {
+    .g-nav-menu { display: none; }
+    .ham-btn { display: flex; }
+  }
+  .g-nav-menu.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 0; right: 0; bottom: 0; width: 240px;
+    background: rgba(13,17,15,0.97);
+    border-left: 1px solid var(--gold-dim);
+    padding: 64px 24px 24px; gap: 4px; z-index: 50;
+  }
+  .g-nav-menu.open a { padding: 12px 14px; }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    height: clamp(340px, 58vh, 620px);
+    overflow: hidden;
+    z-index: 5;
+  }
+  .hero-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 40%;
+    filter: brightness(0.45) saturate(0.75);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(13,17,15,0.15) 0%,
+      rgba(13,17,15,0.5) 45%,
+      rgba(13,17,15,0.88) 80%,
+      var(--bg) 100%
+    );
+  }
+  .hero-content {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    z-index: 5; padding-bottom: 40px;
+  }
+  .hero-affil {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; font-weight: 300;
+    letter-spacing: 0.2em; color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 700; letter-spacing: 0.12em;
+    line-height: 1.45; color: var(--text);
+    margin-bottom: 10px;
+  }
+  .hero-en {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; letter-spacing: 0.38em;
+    text-transform: uppercase; color: var(--text-dim);
+    margin-bottom: 20px;
+  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-block; padding: 4px 12px;
+    border: 1px solid var(--gold-dim); border-radius: 999px;
+    font-size: 11px; letter-spacing: 0.05em;
+    color: var(--text-dim);
+    background: rgba(176,154,106,0.05);
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  /* ── Main ── */
+  main { padding: 32px 0 72px; position: relative; z-index: 5; }
+
+  /* ── Card ── */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .card-hd {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-hd-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-hd-title::before {
+    content: '';
+    display: block;
+    width: 3px; height: 16px;
+    background: var(--gold); border-radius: 2px;
+    opacity: 0.8; flex-shrink: 0;
+  }
+  .card-bd { padding: 20px 24px; line-height: 1.9; }
+  .card-bd p { margin-bottom: 14px; }
+  .card-bd p:last-child { margin-bottom: 0; }
+
+  /* ── News ── */
+  .news-list { list-style: none; }
+  .news-item {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 20px; align-items: start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .news-date {
+    font-variant-numeric: tabular-nums;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px; color: var(--text-dim);
+    white-space: nowrap; padding-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .news-text { font-size: 14px; line-height: 1.85; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--gold-dim);
+    padding: 24px 0;
+    position: relative; z-index: 10;
+    margin-top: 12px;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .footer-links a {
+    font-size: 12px; letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+
+<div class="bg-grain"></div>
+<div class="bg-radial"></div>
+<div class="corner-mark tl"></div>
+<div class="corner-mark tr"></div>
+<div class="corner-mark bl"></div>
+<div class="corner-mark br"></div>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      緑地環境情報学研究室
+      <small>Green Space &amp; Environmental Informatics Lab.</small>
+    </a>
+    <ul class="g-nav-menu" id="navMenu">
+      <li><a href="index.html" class="active">研究紹介</a></li>
+      <li><a href="publications.html">研究業績</a></li>
+      <li><a href="members.html">メンバー</a></li>
+      <li><a href="links.html">いろいろ</a></li>
+      <li><a href="access.html">連絡先/アクセス</a></li>
+    </ul>
+    <button class="ham-btn" id="hamBtn" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-img" src="assets/image/home/IMG_2336.jpeg" alt="森林フィールド">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <p class="hero-affil">千葉大学 大学院園芸学研究院・大学院園芸学研究科・園芸学部 緑地環境情報学研究室</p>
+      <h1 class="hero-title">微生物から樹木まで、<br>森のしくみを多階層で。</h1>
+      <p class="hero-en">Decoding Forest Ecosystems: From Microbes to Trees</p>
+      <div class="chip-row">
+        <span class="chip">森林動態の計測・モデル化</span>
+        <span class="chip">統計・シミュレーション</span>
+        <span class="chip">シカ採食の影響解析</span>
+        <span class="chip">土壌微生物叢</span>
+        <span class="chip">落葉分解</span>
+        <span class="chip">窒素循環</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="card">
+    <div class="card-hd"><span class="card-hd-title">研究紹介</span></div>
+    <div class="card-bd">
+      <p>私たちは、森林・緑地をかたちづくる生物とその相互作用を、さまざまな視点から研究しています。現地での観測や実験、分子生態学的な解析、統計解析やシミュレーションを組み合わせながら、生態系の複雑な仕組みを明らかにしようとしています。植物、微生物、個体群、群集、景観など、異なる分類群、異なる階層で得られる情報を結びつけることで、生物と環境の相互作用や、生態系が変化していく過程を統合的に捉えることを目指しています。</p>
+      <p>主な研究テーマとしては、森林動態の計測と予測、土壌微生物群集の多様性と機能、生態系の物質循環、野生動物と植生の相互作用などがあります。個別の現象を扱いながらも、それらを別々の問題としてではなく、森林・緑地という複雑なシステムの中でつながった現象として理解することを大切にしています。</p>
+      <p>学生・PDの受入、研究室見学（要メールアポ）、共同研究も歓迎しています。お気軽に<a href="access.html">連絡先</a>からお問い合わせください。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><span class="card-hd-title">最新ニュース</span></div>
+    <div class="card-bd">
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026/03/17</span>
+          <span class="news-text">第137回日本森林学会大会（つくば）において、当研究室の学生の小笠原圭佑さんと佐藤宏紀さんがポスター発表を行いました。<br>
+          ・小笠原圭佑・滝谷美香・梅木清. 環境変動に対応した人工林の樹高成長時系列解析. 第137回日本森林学会大会, PE-8, つくば, 2026年3月17日.<br>
+          ・佐藤宏紀・梅木清・平尾聡秀. 構造方程式モデリングによるシカ食害後の下層植生回復の因果関係の解明. 第137回日本森林学会大会, PW-26, つくば, 2026年3月17日.</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/03/12</span>
+          <span class="news-text">日本生態学会第73回全国大会（京都）のシンポジウム<a href="https://www.esj.ne.jp/meeting/abst/73/S10.html" target="_blank" rel="noopener">「情報科学×生態学: 多階層をつなぐ生態現象の理解」</a>において、執行講師が土壌微生物群集の適応的サンプリングについて発表しました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/01/31</span>
+          <span class="news-text">執行講師によるIUFRO（国際森林研究機関連合）タスクフォース（<a href="https://www.iufro.org/task-forces/t58-the-impact-of-biodiversity-on-carbon-related-ecosystem-services-provided-by-soils-of-managed-forests" target="_blank" rel="noopener">T58</a>）の活動を紹介する記事がIUFRO-J News（第139号）に掲載されました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/01/27</span>
+          <span class="news-text">研究室ホームページを更新しました。今後、順次内容を充実させていく予定です。過去のホームページは<a href="https://www.h.chiba-u.jp/lab/terra/" target="_blank" rel="noopener">こちら</a>に残しています。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/01/01</span>
+          <span class="news-text">1月1日付けで、当研究室に講師として執行が着任しました。</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <nav class="footer-links">
+      <a href="index.html">研究紹介</a>
+      <a href="publications.html">研究業績</a>
+      <a href="members.html">メンバー</a>
+      <a href="links.html">いろいろ</a>
+      <a href="access.html">連絡先/アクセス</a>
+    </nav>
+    <span class="footer-copy">&copy; <span id="y"></span> Green Space &amp; Environmental Informatics Laboratory</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+/* Hamburger */
+const hamBtn = document.getElementById('hamBtn');
+const navMenu = document.getElementById('navMenu');
+hamBtn?.addEventListener('click', () => navMenu.classList.toggle('open'));
+document.addEventListener('click', e => {
+  if (!navMenu.contains(e.target) && !hamBtn.contains(e.target))
+    navMenu.classList.remove('open');
+});
+
+/* Page transition */
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || a.hasAttribute('target')) return;
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const trans = document.createElement('div');
+    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s cubic-bezier(0.7,0,0.3,1)';
+    document.body.appendChild(trans);
+    requestAnimationFrame(() => {
+      trans.style.transform = 'scaleY(1)';
+      setTimeout(() => { window.location.href = href; }, 520);
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>研究業績 | 緑地環境情報学研究室</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="緑地環境情報学研究室の研究業績一覧">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<style>
+  :root {
+    --bg: #0d110f;
+    --bg2: #151a17;
+    --bg3: #1a2118;
+    --accent: #3e604e;
+    --accent-light: #5a8a6e;
+    --text: #e2e8f0;
+    --text-dim: #8a9a92;
+    --gold: #b09a6a;
+    --gold-light: #d4c49a;
+    --gold-dim: rgba(176, 154, 106, 0.15);
+    --border: rgba(176, 154, 106, 0.12);
+    --link: #8fc5b0;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    min-height: 100vh; overflow-x: hidden;
+    animation: pageFadeIn 0.7s ease forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  a { color: var(--link); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--gold-light); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── Background ── */
+  .bg-grain {
+    position: fixed; inset: 0; z-index: 1; opacity: 0.035; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+  .bg-radial {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(62,96,78,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 70%, rgba(176,154,106,0.05) 0%, transparent 60%);
+  }
+
+  /* ── Corner marks ── */
+  .corner-mark { position: fixed; z-index: 10; width: 32px; height: 32px; pointer-events: none; }
+  .corner-mark::before, .corner-mark::after { content: ''; position: absolute; background: var(--gold); opacity: 0.25; }
+  .corner-mark.tl { top: 16px; left: 16px; }
+  .corner-mark.tl::before { top: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.tl::after  { top: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.tr { top: 16px; right: 16px; }
+  .corner-mark.tr::before { top: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.tr::after  { top: 0; right: 0; width: 100%; height: 1px; }
+  .corner-mark.bl { bottom: 16px; left: 16px; }
+  .corner-mark.bl::before { bottom: 0; left: 0; width: 1px; height: 100%; }
+  .corner-mark.bl::after  { bottom: 0; left: 0; width: 100%; height: 1px; }
+  .corner-mark.br { bottom: 16px; right: 16px; }
+  .corner-mark.br::before { bottom: 0; right: 0; width: 1px; height: 100%; }
+  .corner-mark.br::after  { bottom: 0; right: 0; width: 100%; height: 1px; }
+  @media (max-width: 768px) { .corner-mark { width: 20px; height: 20px; } }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(13, 17, 15, 0.94);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .container { width: min(1080px, 92vw); margin: 0 auto; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .brand {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(13px, 2vw, 17px); color: var(--gold); font-weight: 700;
+    letter-spacing: 0.06em; text-decoration: none; display: block; transition: color 0.3s;
+  }
+  .brand:hover { color: var(--gold-light); }
+  .brand small {
+    display: block; font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px; font-weight: 300; letter-spacing: 0.28em;
+    color: var(--text-dim); text-transform: uppercase; margin-top: 3px;
+  }
+  .g-nav-menu {
+    list-style: none; display: flex; gap: 2px;
+    font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 500;
+  }
+  .g-nav-menu a {
+    display: block; padding: 6px 10px; color: var(--text-dim);
+    letter-spacing: 0.08em; border-radius: 4px; transition: color 0.3s, background 0.3s;
+  }
+  .g-nav-menu a:hover, .g-nav-menu a.active { color: var(--gold); background: var(--gold-dim); }
+  .ham-btn {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px; z-index: 51;
+  }
+  .ham-btn span { display: block; width: 22px; height: 1px; background: var(--text-dim); }
+  @media (max-width: 760px) { .g-nav-menu { display: none; } .ham-btn { display: flex; } }
+  .g-nav-menu.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 0; right: 0; bottom: 0; width: 240px;
+    background: rgba(13,17,15,0.97); border-left: 1px solid var(--gold-dim);
+    padding: 64px 24px 24px; gap: 4px; z-index: 50;
+  }
+  .g-nav-menu.open a { padding: 12px 14px; }
+
+  /* ── Page header ── */
+  .page-header {
+    padding: 48px 0 36px; position: relative; z-index: 5;
+    border-bottom: 1px solid var(--gold-dim); margin-bottom: 36px;
+  }
+  .page-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    letter-spacing: 0.2em; color: var(--text);
+    position: relative; display: inline-block; padding-bottom: 16px;
+  }
+  .page-title::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 55%;
+    height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .page-title-en {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--text-dim); margin-top: 10px;
+  }
+  .page-note { font-size: 13px; color: var(--text-dim); margin-top: 8px; }
+
+  /* ── Main ── */
+  main { padding: 0 0 72px; position: relative; z-index: 5; }
+
+  /* ── Pub section ── */
+  .pub-block {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 24px;
+  }
+  .pub-block-hd {
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
+    font-family: 'Zen Old Mincho', serif; font-size: 16px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .pub-block-hd::before {
+    content: ''; display: block; width: 3px; height: 16px;
+    background: var(--gold); border-radius: 2px; opacity: 0.8; flex-shrink: 0;
+  }
+  .pub-block-bd { padding: 20px 24px; }
+
+  /* ── Pub list ── */
+  ol.pub-list {
+    list-style: decimal; padding-left: 24px;
+    display: grid; gap: 0;
+    counter-reset: pub-counter;
+  }
+  .pub-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .pub-info { flex: 1; font-size: 14px; line-height: 1.85; }
+  .pub-badges {
+    display: flex; align-items: center; gap: 8px;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* Force Altmetric/Dimensions badges dark-friendly */
+  .altmetric-embed img, .__dimensions_badge_embed__ img { opacity: 0.85; }
+  .altmetric-embed {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--gold-dim); padding: 24px 0;
+    position: relative; z-index: 10;
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .footer-links a { font-size: 12px; letter-spacing: 0.08em; color: var(--text-dim); }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+
+  @media (max-width: 640px) { .pub-badges { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="bg-grain"></div>
+<div class="bg-radial"></div>
+<div class="corner-mark tl"></div>
+<div class="corner-mark tr"></div>
+<div class="corner-mark bl"></div>
+<div class="corner-mark br"></div>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      緑地環境情報学研究室
+      <small>Green Space &amp; Environmental Informatics Lab.</small>
+    </a>
+    <ul class="g-nav-menu" id="navMenu">
+      <li><a href="index.html">研究紹介</a></li>
+      <li><a href="publications.html" class="active">研究業績</a></li>
+      <li><a href="members.html">メンバー</a></li>
+      <li><a href="links.html">いろいろ</a></li>
+      <li><a href="access.html">連絡先/アクセス</a></li>
+    </ul>
+    <button class="ham-btn" id="hamBtn" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="container page-header">
+  <h1 class="page-title">研究業績</h1>
+  <p class="page-title-en">Publications</p>
+  <p class="page-note"><b style="color:var(--gold)">*</b>責任著者</p>
+</div>
+
+<main class="container">
+
+  <!-- Original articles -->
+  <div class="pub-block">
+    <div class="pub-block-hd">Original articles（過去10年）</div>
+    <div class="pub-block-bd">
+      <ol class="pub-list" reversed>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>*, <b>Kiyoshi Umeki</b>, Toshihide Hirao*. (2024) Soil microbial identity explains home-field advantage for litter decomposition. <i>New Phytologist</i> 243:2141–2156. <a href="https://doi.org/10.1111/nph.19769" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1111/nph.19769"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1111/nph.19769" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>*, Koji Shichi, Kyoko Sugai, Setsuko Suzuki. (2023) Diversity profiling of soil bacterial and fungal communities in the Ogasawara (Bonin) Islands, Japan. <i>Microbiology Resource Announcements</i> 12:e00644-23. <a href="https://journals.asm.org/doi/10.1128/mra.00644-23" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1128/mra.00644-23"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1128/mra.00644-23" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Yoshiko Iida*, Kaoru Niiyama, Shin-ichiro Aiba, Hiroko Kurokawa, Shuntaro Kondo, Mana Mukai, Akira S. Mori, Satoshi Saito, Yi Sun, <b>Kiyoshi Umeki</b>. (2023) The trait-mediated trade-off between growth and survival depends on tree sizes and environmental conditions. <i>Journal of Ecology</i> 111:1777-1793. <a href="https://doi.org/10.1111/1365-2745.14146" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1111/1365-2745.14146"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1111/1365-2745.14146" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Kohsuke Tanigawa, <b>Yui Makino</b>, Naoko Miura, <b>Kiyoshi Umeki</b>, Toshihide Hirao*. (2022) Scale-dependent habitat selection of sympatric mesocarnivore species in a cool temperate forest in eastern Japan. <i>Mammalian Biology</i> 102:1901-1910. <a href="https://doi.org/10.1007/s42991-022-00303-w" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s42991-022-00303-w"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1007/s42991-022-00303-w" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>*, Hitomi Furusawa, Naoyuki Yamashita, Junko Nagakura, Takuya Manaka, Tsuyoshi Yamada, Keizo Hirai. (2022) Slope-induced factors shape bacterial communities in surface soils in a forested headwater catchment. <i>CATENA</i> 214:106253. <a href="https://doi.org/10.1016/j.catena.2022.106253" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.catena.2022.106253"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.catena.2022.106253" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Toshihide Hirao*, Masanori Fujii, <b>Nobuhiko Shigyo</b>, Hisaya Kojima and Manabu Fukui. (2021) Influence of understory vegetation on soil bacterial communities and nitrogen cycling gene abundance in cool-temperate and sub-alpine forests along an elevational gradient. <i>Pedobiologia</i> 87-88:150746. <a href="https://doi.org/10.1016/j.pedobi.2021.150746" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.pedobi.2021.150746"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.pedobi.2021.150746" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>* and Toshihide Hirao. (2021) Saprotrophic and ectomycorrhizal fungi exhibit contrasting richness patterns along elevational gradients in cool-temperate montane forests. <i>Fungal Ecology</i> 50:101036. <a href="https://doi.org/10.1016/j.funeco.2020.101036" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.funeco.2020.101036"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.funeco.2020.101036" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>福地孝哉</b>, 滝谷美香, <b>梅木清</b>*. (2020) 航空機LiDARデータを用いたトドマツ人工林の上層樹高と地位指数の推定. <i>環境情報科学論文集</i> 34:151-155. <a href="https://doi.org/10.11492/ceispapers.ceis34.0_151" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.11492/ceispapers.ceis34.0_151"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.11492/ceispapers.ceis34.0_151" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>牧野結衣</b>, 平尾聡秀, <b>梅木清</b>*. (2020) 奥秩父山地におけるシカ不嗜好性植物2種の分布域拡大過程. <i>環境情報科学論文集</i> 34:156-161. <a href="https://doi.org/10.11492/ceispapers.ceis34.0_156" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.11492/ceispapers.ceis34.0_156"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.11492/ceispapers.ceis34.0_156" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Kiyoshi Umeki</b>*, Marc David Abrams, Keisuke Toyama, Eri Nabeshima. (2019) A model for longitudinal data sets relating wind-damage probability to biotic and abiotic factors: a Bayesian approach. <i>Forest Systems</i> e019-2019. <a href="https://doi.org/10.5424/fs/2019283-15200" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.5424/fs/2019283-15200"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.5424/fs/2019283-15200" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>*, <b>Kiyoshi Umeki</b> and Toshihide Hirao. (2019) Seasonal dynamics of soil fungal and bacterial communities in cool-temperate montane forests. <i>Frontiers in Microbiology</i> 10:1941. <a href="https://doi.org/10.3389/fmicb.2019.01944" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.3389/fmicb.2019.01944"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.3389/fmicb.2019.01944" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Maki Suzuki*, <b>Kiyoshi Umeki</b>, Olga Orman, Mitsue Shibata, Hiroshi Tanaka, Shigeo Iida, Tohru Nakashizuka, Takashi Masaki. (2019) When and why do trees begin to decrease their resource allocation to apical growth? The importance of the reproductive onset. <i>Oecologia</i> 191:39-49. <a href="https://doi.org/10.1007/s00442-019-04477-y" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00442-019-04477-y"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1007/s00442-019-04477-y" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>*, <b>Kiyoshi Umeki</b>, Toshihide Hirao. (2019) Plant functional diversity and soil properties control elevational diversity gradients of soil bacteria. <i>FEMS Microbiology Ecology</i> 95:fiz025. <a href="https://doi.org/10.1093/femsec/fiz025" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1093/femsec/fiz025"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1093/femsec/fiz025" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Kiyoshi Umeki</b>*, Mitsuru Kawasaki, <b>Nobuhiko Shigyo</b>, Toshihide Hirao. (2018) Inter- and intraspecific patterns in resprouting of trees in undisturbed natural forests along an elevational gradient in central Japan. <i>Forests</i> 9:672. <a href="https://doi.org/10.3390/f9110672" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.3390/f9110672"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.3390/f9110672" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Marc D. Abrams*, <b>Kiyoshi Umeki</b>, Christopher Bouma, Eri Nabeshima, Keisuke Toyama. (2017) A dendroecological analysis of forest dynamics for old-growth Abies-Tsuga-Quercus on the Boso peninsula, southeastern Japan. <i>Tree-Ring Research</i> 73:59-74. <a href="https://doi.org/10.3959/1536-1098-73.2.59" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.3959/1536-1098-73.2.59"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.3959/1536-1098-73.2.59" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>*, <b>Kiyoshi Umeki</b>, Haruka Ohashi, Kiyokazu Kawada, Toshihide Hirao. (2017) Phylogenetic constraints to soil properties determine elevational diversity gradients of forest understory vegetation. <i>Plant Ecology</i> 218:821–834. <a href="https://doi.org/10.1007/s11258-017-0732-z" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s11258-017-0732-z"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1007/s11258-017-0732-z" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Nobumitsu Tsunematsu*, Hitoshi Yokoyama, Tsuyoshi Honjo, Arata Ichihashi, Haruo Ando, <b>Nobuhiko Shigyo</b>. (2016) Relationship between land use/cover variations and amounts of thermal infrared energy emitted from urban surfaces in downtown Tokyo on hot summer days. <i>Urban Climate</i> 17:67–79. <a href="https://doi.org/10.1016/j.uclim.2016.03.002" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.uclim.2016.03.002"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.uclim.2016.03.002" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Tsuyoshi Honjo*, Nobumitsu Tsunematsu, Hitoshi Yokoyama, Yudai Yamasaki, <b>Kiyoshi Umeki</b>. (2017) Analysis of urban surface temperature change using structure-from-motion thermal mosaicing. <i>Urban Climate</i> 20:135-147. <a href="https://doi.org/10.1016/j.uclim.2017.04.004" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.uclim.2017.04.004"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.uclim.2017.04.004" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            Masae Iwamoto Ishihara*, Yasuo Konno, <b>Kiyoshi Umeki</b>, Yasuyuki Ohno, Kihachiro Kikuzawa. (2016) A new model for size-dependent tree growth in forests. <i>PLoS One</i> e0152219. <a href="https://doi.org/10.1371/journal.pone.0152219" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1371/journal.pone.0152219"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.1371/journal.pone.0152219" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            山﨑雄大, 常松展充, 横山仁, <b>梅木清</b>, 本條毅*. (2016) 温熱快適感マップの作成と夏季マラソンコースの温熱環境予測. <i>環境情報科学論文集</i> 30:43-48. <a href="https://doi.org/10.11492/ceispapers.ceis30.0_43" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.11492/ceispapers.ceis30.0_43"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.11492/ceispapers.ceis30.0_43" data-style="small_circle"></span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            小島倫直, 本條毅, <b>梅木清</b>*. (2016) 樹木モデルを用いた植物個体光合成量の計算手法. <i>ランドスケープ研究</i> 79:693-696. <a href="https://doi.org/10.5632/jila.79.693" target="_blank" rel="noopener">[link]</a>
+          </div>
+          <div class="pub-badges">
+            <div class="altmetric-embed" data-badge-type="donut" data-doi="10.5632/jila.79.693"></div>
+            <span class="__dimensions_badge_embed__" data-doi="10.5632/jila.79.693" data-style="small_circle"></span>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+  <!-- Misc -->
+  <div class="pub-block">
+    <div class="pub-block-hd">Misc</div>
+    <div class="pub-block-bd">
+      <ol class="pub-list" reversed>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>執行宣彦</b>. (2026) IUFRO Task Force T58「The Impact of Biodiversity on Carbon Related Ecosystem Services Provided by Soils of Managed Forests」の紹介. <i>IUFRO-J NEWS</i> 139:1-3. <a href="https://www.iufro.org/media/fileadmin/publications/iufro-japan-news/iufro-japan-news-139.pdf" target="_blank" rel="noopener">[link]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>. (2025) Preparation of long rDNA amplicons of arbuscular mycorrhizal fungi (Glomeromycota) from soil and root DNA for high-fidelity long-read sequencing. <i>protocols.io</i>. <a href="https://www.protocols.io/view/preparation-of-long-rdna-amplicons-of-arbuscular-m-e6nvw4xjzlmk/v1" target="_blank" rel="noopener">[link]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>梅木清</b>, 彦坂晶子, 椎名武夫. (2023) 先端園芸工学講座. <i>食と緑の科学</i>. <a href="https://opac.ll.chiba-u.jp/da/curator/900121825/" target="_blank" rel="noopener">[link]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>Nobuhiko Shigyo</b>. (2022) Accurate profiling of diazotrophic communities using unique molecular identifiers with Nanopore sequencing. <i>protocols.io</i>. <a href="https://protocols.io/view/accurate-profiling-of-diazotrophic-communities-usi-cgj6ture.html" target="_blank" rel="noopener">[link]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-info">
+            <b>執行宣彦</b>, <b>梅木清</b>, 平尾聡秀. (2017) 東京大学秩父演習林における標高に沿った土壌特性と環境要因の関係. <i>演習林</i> 59:223–233. <a href="https://doi.org/10.15083/00026123" target="_blank" rel="noopener">[link]</a>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <nav class="footer-links">
+      <a href="index.html">研究紹介</a>
+      <a href="publications.html">研究業績</a>
+      <a href="members.html">メンバー</a>
+      <a href="links.html">いろいろ</a>
+      <a href="access.html">連絡先/アクセス</a>
+    </nav>
+    <span class="footer-copy">&copy; <span id="y"></span> Green Space &amp; Environmental Informatics Laboratory</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const hamBtn = document.getElementById('hamBtn');
+const navMenu = document.getElementById('navMenu');
+hamBtn?.addEventListener('click', () => navMenu.classList.toggle('open'));
+document.addEventListener('click', e => {
+  if (!navMenu.contains(e.target) && !hamBtn.contains(e.target))
+    navMenu.classList.remove('open');
+});
+
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || a.hasAttribute('target')) return;
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const trans = document.createElement('div');
+    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s cubic-bezier(0.7,0,0.3,1)';
+    document.body.appendChild(trans);
+    requestAnimationFrame(() => {
+      trans.style.transform = 'scaleY(1)';
+      setTimeout(() => { window.location.href = href; }, 520);
+    });
+  });
+});
+</script>
+</body>
+</html>
