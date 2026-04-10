@@ -260,8 +260,15 @@
 
   @media (max-width: 860px) {
     .profile-card { grid-template-columns: 1fr; }
-    .profile-left { border-right: none; border-bottom: 1px solid var(--border); }
-    .profile-photo, .photo-placeholder { aspect-ratio: 3/2; max-height: 240px; }
+    .profile-left {
+      border-right: none; border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+    .profile-photo, .photo-placeholder {
+      width: 160px; height: 200px;
+      aspect-ratio: unset;
+      flex-shrink: 0;
+    }
   }
 
   /* ── Student members ── */
