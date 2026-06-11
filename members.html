@@ -2,15 +2,6 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YLF3KX4KYG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YLF3KX4KYG');
-  </script>
 <title>メンバー | 緑地環境情報学研究室</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="緑地環境情報学研究室のメンバー紹介（PI・学生・OB/OG）">
@@ -19,6 +10,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLF3KX4KYG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLF3KX4KYG');
+</script>
 <style>
   :root {
     --bg: #0d110f;
@@ -269,15 +269,8 @@
 
   @media (max-width: 860px) {
     .profile-card { grid-template-columns: 1fr; }
-    .profile-left {
-      border-right: none; border-bottom: 1px solid var(--border);
-      align-items: center;
-    }
-    .profile-photo, .photo-placeholder {
-      width: 160px; height: 200px;
-      aspect-ratio: unset;
-      flex-shrink: 0;
-    }
+    .profile-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .profile-photo, .photo-placeholder { aspect-ratio: 3/2; max-height: 240px; }
   }
 
   /* ── Student members ── */
@@ -491,17 +484,17 @@
         <li class="member-item">
           <span class="member-name">堀越 海翔</span>
           <span class="member-info">Kaito Horikoshi — B4</span>
-          <span class="member-theme">未定</span>
+          <span class="member-theme">選択的膜透過性色素とリアルタイムPCRを用いた森林土壌微生物の生菌群集解析手法の検討</span>
         </li>
         <li class="member-item">
           <span class="member-name">松永 彩花</span>
           <span class="member-info">Ayaka Matsunaga — B4</span>
-          <span class="member-theme">未定</span>
+          <span class="member-theme">微細空間スケールの森林土壌微生物群集におけるベイズ適応的サンプリングの設計条件の検討</span>
         </li>
         <li class="member-item">
           <span class="member-name">池田 真唯子</span>
           <span class="member-info">Maiko Ikeda — B4</span>
-          <span class="member-theme">未定</span>
+          <span class="member-theme">スギ林における非共生窒素固定菌の林内循環仮説の検証</span>
         </li>
         <li class="member-item">
           <span class="member-name">中川 琉喜</span>
