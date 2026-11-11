@@ -2,9 +2,23 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>研究紹介 | 緑地環境情報学研究室</title>
+<title>緑地環境情報学研究室 | 千葉大学 大学院園芸学研究院</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="緑地環境情報学研究室：森林動態の計測・モデル化、土壌微生物・落葉分解・窒素固定、シカ採食の影響解析など。">
+<link rel="canonical" href="https://johoken.github.io/">
+<link rel="alternate" hreflang="ja" href="https://johoken.github.io/">
+<link rel="alternate" hreflang="en" href="https://johoken.github.io/en.html">
+<link rel="alternate" hreflang="x-default" href="https://johoken.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="緑地環境情報学研究室">
+<meta property="og:title" content="緑地環境情報学研究室 | 千葉大学 大学院園芸学研究院">
+<meta property="og:description" content="緑地環境情報学研究室：森林動態の計測・モデル化、土壌微生物・落葉分解・窒素固定、シカ採食の影響解析など。">
+<meta property="og:url" content="https://johoken.github.io/">
+<meta property="og:image" content="https://johoken.github.io/assets/image/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,7 +145,7 @@
     font-size: 12px; font-weight: 500;
   }
   .g-nav-menu a {
-    display: block; padding: 6px 10px;
+    display: block; padding: 6px 10px; white-space: nowrap;
     color: var(--text-dim); letter-spacing: 0.08em;
     border-radius: 4px;
     transition: color 0.3s, background 0.3s;
@@ -145,7 +159,7 @@
     background: none; border: none; cursor: pointer; padding: 4px; z-index: 51;
   }
   .ham-btn span { display: block; width: 22px; height: 1px; background: var(--text-dim); transition: all 0.3s; }
-  @media (max-width: 760px) {
+  @media (max-width: 900px) {
     .g-nav-menu { display: none; }
     .ham-btn { display: flex; }
   }
@@ -245,6 +259,59 @@
   .card-bd p { margin-bottom: 14px; }
   .card-bd p:last-child { margin-bottom: 0; }
 
+  /* ── Research themes ── */
+  .section-hd { margin: 36px 0 16px; }
+  .section-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.12em;
+  }
+  .section-en {
+    font-size: 10px; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--text-dim);
+    margin-top: 6px;
+  }
+  .theme-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 20px; margin-bottom: 20px;
+  }
+  @media (max-width: 760px) { .theme-grid { grid-template-columns: 1fr; } }
+  .theme-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .theme-fig {
+    aspect-ratio: 16 / 9;
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 60%, rgba(62,96,78,0.16) 0%, transparent 75%),
+      var(--bg3);
+    border-bottom: 1px solid var(--border);
+  }
+  .theme-fig svg, .theme-fig img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .theme-body { padding: 18px 22px 20px; display: flex; flex-direction: column; flex: 1; }
+  .theme-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--gold-light); letter-spacing: 0.08em; line-height: 1.5;
+  }
+  .theme-en {
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-dim);
+    margin: 4px 0 12px;
+  }
+  .theme-desc { font-size: 14px; line-height: 1.9; margin-bottom: 14px; }
+  .theme-refs {
+    list-style: none; margin-top: auto;
+    padding-top: 12px; border-top: 1px solid var(--border);
+    font-size: 12.5px; line-height: 1.7; color: var(--text-dim);
+  }
+  .theme-refs-label {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.85; margin-bottom: 4px;
+  }
+
   /* ── News ── */
   .news-list { list-style: none; }
   .news-item {
@@ -304,6 +371,7 @@
       <li><a href="members.html">メンバー</a></li>
       <li><a href="links.html">いろいろ</a></li>
       <li><a href="access.html">連絡先/アクセス</a></li>
+      <li><a href="en.html" lang="en">English</a></li>
     </ul>
     <button class="ham-btn" id="hamBtn" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -340,6 +408,149 @@
       <p>学生・PDの受入、研究室見学（要メールアポ）、共同研究も歓迎しています。お気軽に<a href="access.html">連絡先</a>からお問い合わせください。</p>
     </div>
   </div>
+
+  <!-- 研究テーマ：各カードの図は .theme-fig 内の <svg> を <img src="..." alt="..."> に置き換えると写真に差し替えられます -->
+  <section id="themes">
+    <div class="section-hd">
+      <h2 class="section-title">研究テーマ</h2>
+      <p class="section-en">Research Themes</p>
+    </div>
+    <div class="theme-grid">
+      <article class="theme-card">
+        <div class="theme-fig">
+          <svg viewBox="0 0 320 180" role="img" aria-label="大きさの異なる樹木と成長の軌跡、樹冠内の計測点の模式図" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="20" y1="152" x2="300" y2="152" stroke="#5a8a6e" stroke-width="1" opacity=".7"/>
+            <line x1="50" y1="152" x2="50" y2="130.3" stroke="#5a8a6e" stroke-width="1.6"/>
+            <ellipse cx="50" cy="128" rx="9" ry="11.7" stroke="#5a8a6e" stroke-width="1.2" fill="#5a8a6e" fill-opacity=".12"/>
+            <g fill="#b09a6a" opacity=".8"><circle cx="46.8" cy="119.8" r="1.1"/><circle cx="50.6" cy="124.9" r="1.1"/><circle cx="42" cy="128.2" r="1.1"/><circle cx="48.6" cy="135.6" r="1.1"/><circle cx="51.4" cy="125.6" r="1.1"/><circle cx="56.5" cy="123.1" r="1.1"/><circle cx="46.6" cy="135.4" r="1.1"/><circle cx="44.3" cy="129.9" r="1.1"/><circle cx="52.5" cy="125" r="1.1"/></g>
+            <line x1="102" y1="152" x2="102" y2="113.1" stroke="#5a8a6e" stroke-width="1.6"/>
+            <ellipse cx="102" cy="110" rx="12" ry="15.6" stroke="#5a8a6e" stroke-width="1.2" fill="#5a8a6e" fill-opacity=".12"/>
+            <g fill="#b09a6a" opacity=".8"><circle cx="103.1" cy="96.4" r="1.1"/><circle cx="106.3" cy="107.7" r="1.1"/><circle cx="97.5" cy="112.7" r="1.1"/><circle cx="100.9" cy="103.8" r="1.1"/><circle cx="109.1" cy="116.2" r="1.1"/><circle cx="95.9" cy="112.3" r="1.1"/><circle cx="102.6" cy="121.7" r="1.1"/><circle cx="107.5" cy="103.4" r="1.1"/><circle cx="100" cy="118" r="1.1"/><circle cx="93.6" cy="109.7" r="1.1"/><circle cx="108.3" cy="112.3" r="1.1"/><circle cx="111" cy="104.2" r="1.1"/><circle cx="106.7" cy="112.9" r="1.1"/><circle cx="103.9" cy="108.6" r="1.1"/></g>
+            <line x1="158" y1="152" x2="158" y2="93.9" stroke="#5a8a6e" stroke-width="1.6"/>
+            <ellipse cx="158" cy="90" rx="15" ry="19.5" stroke="#5a8a6e" stroke-width="1.2" fill="#5a8a6e" fill-opacity=".12"/>
+            <g fill="#b09a6a" opacity=".8"><circle cx="157.2" cy="96.4" r="1.1"/><circle cx="167.7" cy="81.6" r="1.1"/><circle cx="154.6" cy="96.6" r="1.1"/><circle cx="146.9" cy="80.2" r="1.1"/><circle cx="154.7" cy="104.5" r="1.1"/><circle cx="145.4" cy="88" r="1.1"/><circle cx="159.5" cy="105" r="1.1"/><circle cx="151.4" cy="86.7" r="1.1"/><circle cx="153.8" cy="105" r="1.1"/><circle cx="148.3" cy="79.5" r="1.1"/><circle cx="150" cy="89.4" r="1.1"/><circle cx="160.7" cy="80.7" r="1.1"/><circle cx="154.1" cy="92.6" r="1.1"/><circle cx="158.5" cy="94.6" r="1.1"/><circle cx="154.8" cy="86.1" r="1.1"/><circle cx="146.1" cy="95.2" r="1.1"/><circle cx="149.3" cy="76.8" r="1.1"/><circle cx="146" cy="84.7" r="1.1"/><circle cx="161.4" cy="76.3" r="1.1"/><circle cx="150.6" cy="84" r="1.1"/></g>
+            <line x1="216" y1="152" x2="216" y2="76.7" stroke="#5a8a6e" stroke-width="1.6"/>
+            <ellipse cx="216" cy="72" rx="18" ry="23.4" stroke="#5a8a6e" stroke-width="1.2" fill="#5a8a6e" fill-opacity=".12"/>
+            <g fill="#b09a6a" opacity=".8"><circle cx="211.1" cy="54.3" r="1.1"/><circle cx="214.8" cy="71.2" r="1.1"/><circle cx="210.3" cy="61" r="1.1"/><circle cx="217" cy="55.5" r="1.1"/><circle cx="229.1" cy="81.2" r="1.1"/><circle cx="207.4" cy="65.8" r="1.1"/><circle cx="204" cy="84.7" r="1.1"/><circle cx="217.2" cy="85.1" r="1.1"/><circle cx="209.9" cy="59" r="1.1"/><circle cx="227.5" cy="83.2" r="1.1"/><circle cx="206.2" cy="72.8" r="1.1"/><circle cx="207.3" cy="81" r="1.1"/><circle cx="205.9" cy="59.2" r="1.1"/><circle cx="205.1" cy="58.2" r="1.1"/><circle cx="220.5" cy="90.7" r="1.1"/><circle cx="228.3" cy="71" r="1.1"/><circle cx="221.5" cy="86" r="1.1"/><circle cx="201.1" cy="79.5" r="1.1"/><circle cx="225" cy="71" r="1.1"/><circle cx="204.4" cy="85.5" r="1.1"/><circle cx="210" cy="86.1" r="1.1"/><circle cx="224.1" cy="56.6" r="1.1"/><circle cx="210.6" cy="74.3" r="1.1"/><circle cx="217" cy="92.3" r="1.1"/><circle cx="213.6" cy="89.4" r="1.1"/><circle cx="227.7" cy="58.5" r="1.1"/><circle cx="207.1" cy="62.3" r="1.1"/></g>
+            <line x1="272" y1="152" x2="272" y2="63.5" stroke="#5a8a6e" stroke-width="1.6"/>
+            <ellipse cx="272" cy="58" rx="21" ry="27.3" stroke="#5a8a6e" stroke-width="1.2" fill="#5a8a6e" fill-opacity=".12"/>
+            <g fill="#b09a6a" opacity=".8"><circle cx="261.1" cy="62.7" r="1.1"/><circle cx="261.9" cy="53.6" r="1.1"/><circle cx="265.9" cy="55.7" r="1.1"/><circle cx="275.5" cy="80.1" r="1.1"/><circle cx="268.7" cy="80.8" r="1.1"/><circle cx="272.1" cy="59.7" r="1.1"/><circle cx="269.5" cy="40.7" r="1.1"/><circle cx="258.2" cy="56.6" r="1.1"/><circle cx="281.5" cy="61.1" r="1.1"/><circle cx="264.7" cy="59" r="1.1"/><circle cx="274.3" cy="73.5" r="1.1"/><circle cx="255.5" cy="61.3" r="1.1"/><circle cx="261.4" cy="45.8" r="1.1"/><circle cx="283.4" cy="58.4" r="1.1"/><circle cx="274.6" cy="72.2" r="1.1"/><circle cx="289.3" cy="54.9" r="1.1"/><circle cx="276.7" cy="58.3" r="1.1"/><circle cx="272.5" cy="68.5" r="1.1"/><circle cx="270" cy="59.8" r="1.1"/><circle cx="271.1" cy="82.1" r="1.1"/><circle cx="280.4" cy="78.6" r="1.1"/><circle cx="274.5" cy="82.2" r="1.1"/><circle cx="256.1" cy="54.8" r="1.1"/><circle cx="257.5" cy="69.8" r="1.1"/><circle cx="278.7" cy="38.5" r="1.1"/><circle cx="267.7" cy="57.3" r="1.1"/><circle cx="257.8" cy="54.3" r="1.1"/><circle cx="272.7" cy="49.2" r="1.1"/><circle cx="259.2" cy="48.1" r="1.1"/><circle cx="274.3" cy="54.7" r="1.1"/><circle cx="277.2" cy="58.7" r="1.1"/><circle cx="262.4" cy="37.8" r="1.1"/><circle cx="268.7" cy="80.5" r="1.1"/><circle cx="285.4" cy="44.8" r="1.1"/><circle cx="275" cy="68.9" r="1.1"/></g>
+            <path d="M28,119.3 C50,109.3 82,93.4 102,87.4 S134,73.5 158,63.5 S192,51.6 216,41.6 S248,26.7 272,23.7" stroke="#b09a6a" stroke-width="1.2" stroke-dasharray="3 4" opacity=".9"/>
+            <path d="M265,21.7 L275,22.7 L268,30.7" stroke="#b09a6a" stroke-width="1.2" opacity=".9"/>
+          </svg>
+        </div>
+        <div class="theme-body">
+          <h3 class="theme-title">森林動態の計測とモデル化</h3>
+          <p class="theme-en">Forest dynamics: measurement and modelling</p>
+          <p class="theme-desc">樹木がどのように成長し、枯れ、次の世代へ入れ替わっていくのか。毎木調査やLiDAR、リモートセンシングで森林の構造と変化を測り、階層ベイズモデルや機能的・構造的樹木モデルを用いて、成長・死亡・更新の過程を定量化します。環境の変化や撹乱のもとで森林がどう変わるかを予測することを目指しています。</p>
+          <ul class="theme-refs">
+            <li class="theme-refs-label">代表的な論文</li>
+            <li><a href="https://doi.org/10.1111/1365-2745.14146" target="_blank" rel="noopener">Iida et al. (2023) <i>Journal of Ecology</i></a></li>
+            <li><a href="https://doi.org/10.3390/f9110672" target="_blank" rel="noopener">Umeki et al. (2018) <i>Forests</i></a></li>
+            <li><a href="https://doi.org/10.11492/ceispapers.ceis34.0_151" target="_blank" rel="noopener">福地ら (2020) <i>環境情報科学論文集</i></a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="theme-card">
+        <div class="theme-fig">
+          <svg viewBox="0 0 320 180" role="img" aria-label="地上の植物と、土壌中の微生物共起ネットワークの模式図。植物の根が土壌中のネットワークにつながっている" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="0" y="54" width="320" height="126" fill="#b09a6a" fill-opacity=".06"/>
+            <line x1="0" y1="54" x2="320" y2="54" stroke="#5a8a6e" stroke-width="1.3" opacity=".9"/>
+            <path d="M64,54 V34 M64,44 c-8,-2 -11,-8 -10,-13 c7,1 10,7 10,13 M64,38 c8,-2 11,-8 10,-13 c-7,1 -10,7 -10,13" stroke="#5a8a6e" stroke-width="1.2" fill="#5a8a6e" fill-opacity=".16"/>
+            <path d="M122,54 V42 M122,47 c-5,-1 -7,-5 -6,-8 c4,1 6,4 6,8 M122,44 c5,-1 7,-5 6,-8 c-4,1 -6,4 -6,8" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".16"/>
+            <line x1="180" y1="54" x2="180" y2="28" stroke="#5a8a6e" stroke-width="1.8"/>
+            <ellipse cx="180" cy="19" rx="18" ry="13" stroke="#5a8a6e" stroke-width="1.3" fill="#5a8a6e" fill-opacity=".16"/>
+            <path d="M180,36 l-7,-6 M180,40 l7,-7" stroke="#5a8a6e" stroke-width="1.1"/>
+            <path d="M256,54 C254,44 248,38 243,35 M256,54 C256,42 255,34 253,28 M256,54 C258,43 262,36 267,32 M256,54 C259,48 266,45 272,44" stroke="#5a8a6e" stroke-width="1.2"/>
+            <path d="M64,54 C64,63.9 56.5,67.2 54,76 M64,54 C64,65.2 69.2,69.0 71,79 M122,54 C122,63.0 117.5,66.0 116,74 M122,54 C122,64.3 126.5,67.8 128,77 M180,54 C180,63.9 167.2,67.2 163,76 M180,54 C180,66.6 176.2,70.8 175,82 M180,54 C180,65.7 186.0,69.6 188,80 M180,54 C180,63.0 195.0,66.0 200,74 M256,54 C256,63.5 249.2,66.6 247,75 M256,54 C256,65.7 258.2,69.6 259,80 M256,54 C256,63.0 265.0,66.0 268,74" stroke="#5a8a6e" stroke-width="1.05" opacity=".9"/>
+            <g stroke="#5a8a6e" stroke-width=".8" opacity=".75"><line x1="54" y1="76" x2="62.4" y2="82.4"/><line x1="54" y1="76" x2="47.2" y2="84.2"/><line x1="71" y1="79" x2="72.9" y2="80.7"/><line x1="71" y1="79" x2="62.4" y2="82.4"/><line x1="116" y1="74" x2="94.2" y2="83.8"/><line x1="163" y1="76" x2="175.3" y2="94"/><line x1="163" y1="76" x2="152.1" y2="95.9"/><line x1="175" y1="82" x2="175.3" y2="94"/><line x1="175" y1="82" x2="152.1" y2="95.9"/><line x1="188" y1="80" x2="175.3" y2="94"/><line x1="200" y1="74" x2="224.4" y2="84.7"/><line x1="247" y1="75" x2="241.7" y2="86.1"/><line x1="247" y1="75" x2="246.1" y2="97.4"/><line x1="259" y1="80" x2="260.3" y2="95.1"/><line x1="259" y1="80" x2="273" y2="91.8"/><line x1="268" y1="74" x2="273" y2="91.8"/><line x1="268" y1="74" x2="260.3" y2="95.1"/></g>
+            <g stroke="#d4c49a" stroke-width=".7" opacity=".36"><line x1="53.3" y1="103.9" x2="43.7" y2="94.1"/><line x1="53.3" y1="103.9" x2="73.7" y2="103.7"/><line x1="53.3" y1="103.9" x2="36.4" y2="107.8"/><line x1="92.8" y1="121" x2="73.7" y2="103.7"/><line x1="92.8" y1="121" x2="105.1" y2="105.7"/><line x1="92.8" y1="121" x2="103.8" y2="116.6"/><line x1="33.6" y1="89.4" x2="43.7" y2="94.1"/><line x1="33.6" y1="89.4" x2="47.2" y2="84.2"/><line x1="33.6" y1="89.4" x2="36.4" y2="107.8"/><line x1="43.7" y1="94.1" x2="47.2" y2="84.2"/><line x1="43.7" y1="94.1" x2="36.4" y2="107.8"/><line x1="62.4" y1="82.4" x2="72.9" y2="80.7"/><line x1="62.4" y1="82.4" x2="73.7" y2="103.7"/><line x1="62.4" y1="82.4" x2="75.1" y2="91"/><line x1="72.9" y1="80.7" x2="73.7" y2="103.7"/><line x1="72.9" y1="80.7" x2="75.1" y2="91"/><line x1="72.9" y1="80.7" x2="94.2" y2="83.8"/><line x1="73.7" y1="103.7" x2="75.1" y2="91"/><line x1="73.7" y1="103.7" x2="85.8" y2="101.5"/><line x1="73.7" y1="103.7" x2="94.2" y2="83.8"/><line x1="105.1" y1="105.7" x2="103.8" y2="116.6"/><line x1="105.1" y1="105.7" x2="85.8" y2="101.5"/><line x1="75.1" y1="91" x2="85.8" y2="101.5"/><line x1="75.1" y1="91" x2="94.2" y2="83.8"/><line x1="85.8" y1="101.5" x2="94.2" y2="83.8"/><line x1="214.1" y1="132.9" x2="223.7" y2="142.1"/><line x1="214.1" y1="132.9" x2="203.6" y2="115.4"/><line x1="214.1" y1="132.9" x2="195" y2="129.8"/><line x1="214.1" y1="132.9" x2="242.4" y2="111.8"/><line x1="223.7" y1="142.1" x2="190.9" y2="141.6"/><line x1="223.7" y1="142.1" x2="195" y2="129.8"/><line x1="223.7" y1="142.1" x2="256.4" y2="155.6"/><line x1="223.7" y1="142.1" x2="242.4" y2="111.8"/><line x1="152.1" y1="95.9" x2="155.8" y2="107.5"/><line x1="152.1" y1="95.9" x2="175.3" y2="94"/><line x1="152.1" y1="95.9" x2="174.5" y2="112.9"/><line x1="152.1" y1="95.9" x2="141.4" y2="103.3"/><line x1="155.8" y1="107.5" x2="152.2" y2="127.3"/><line x1="155.8" y1="107.5" x2="174.5" y2="112.9"/><line x1="155.8" y1="107.5" x2="141.4" y2="103.3"/><line x1="224.4" y1="84.7" x2="203.6" y2="115.4"/><line x1="224.4" y1="84.7" x2="242.4" y2="111.8"/><line x1="181.7" y1="135.1" x2="190.9" y2="141.6"/><line x1="181.7" y1="135.1" x2="169.2" y2="151.7"/><line x1="181.7" y1="135.1" x2="174.5" y2="112.9"/><line x1="181.7" y1="135.1" x2="195" y2="129.8"/><line x1="175.3" y1="94" x2="174.5" y2="112.9"/><line x1="152.2" y1="127.3" x2="148.7" y2="150.3"/><line x1="152.2" y1="127.3" x2="134.6" y2="140.8"/><line x1="152.2" y1="127.3" x2="174.5" y2="112.9"/><line x1="152.2" y1="127.3" x2="141.4" y2="103.3"/><line x1="203.6" y1="115.4" x2="174.5" y2="112.9"/><line x1="203.6" y1="115.4" x2="195" y2="129.8"/><line x1="190.9" y1="141.6" x2="195" y2="129.8"/><line x1="169.2" y1="151.7" x2="148.7" y2="150.3"/><line x1="148.7" y1="150.3" x2="134.6" y2="140.8"/><line x1="174.5" y1="112.9" x2="195" y2="129.8"/><line x1="256.4" y1="155.6" x2="242.4" y2="111.8"/><line x1="260.3" y1="95.1" x2="241.7" y2="86.1"/><line x1="260.3" y1="95.1" x2="280.6" y2="104.8"/><line x1="260.3" y1="95.1" x2="273" y2="91.8"/><line x1="260.3" y1="95.1" x2="259.7" y2="113.3"/><line x1="260.3" y1="95.1" x2="270.7" y2="120.1"/><line x1="260.3" y1="95.1" x2="246.1" y2="97.4"/><line x1="260.3" y1="95.1" x2="230.5" y2="95.1"/><line x1="241.7" y1="86.1" x2="246.1" y2="97.4"/><line x1="241.7" y1="86.1" x2="230.5" y2="95.1"/><line x1="241.7" y1="86.1" x2="227.2" y2="105.7"/><line x1="280.6" y1="104.8" x2="273" y2="91.8"/><line x1="280.6" y1="104.8" x2="281.8" y2="118.8"/><line x1="280.6" y1="104.8" x2="294.5" y2="89"/><line x1="280.6" y1="104.8" x2="295" y2="106.1"/><line x1="280.6" y1="104.8" x2="270.7" y2="120.1"/><line x1="273" y1="91.8" x2="294.5" y2="89"/><line x1="281.8" y1="118.8" x2="295" y2="106.1"/><line x1="281.8" y1="118.8" x2="270.7" y2="120.1"/><line x1="259.7" y1="113.3" x2="270.7" y2="120.1"/><line x1="294.5" y1="89" x2="295" y2="106.1"/><line x1="246.1" y1="97.4" x2="230.5" y2="95.1"/><line x1="246.1" y1="97.4" x2="227.2" y2="105.7"/><line x1="230.5" y1="95.1" x2="227.2" y2="105.7"/><line x1="124.3" y1="156.9" x2="104.4" y2="144.3"/><line x1="124.3" y1="156.9" x2="114.5" y2="148.3"/><line x1="124.3" y1="156.9" x2="161.4" y2="139.6"/><line x1="124.3" y1="156.9" x2="120.7" y2="139.6"/><line x1="104.4" y1="144.3" x2="87.4" y2="157.4"/><line x1="104.4" y1="144.3" x2="114.5" y2="148.3"/><line x1="104.4" y1="144.3" x2="50.7" y2="148.9"/><line x1="104.4" y1="144.3" x2="91.4" y2="142.9"/><line x1="104.4" y1="144.3" x2="98.4" y2="164.2"/><line x1="104.4" y1="144.3" x2="120.7" y2="139.6"/><line x1="87.4" y1="157.4" x2="50.7" y2="148.9"/><line x1="87.4" y1="157.4" x2="91.4" y2="142.9"/><line x1="87.4" y1="157.4" x2="98.4" y2="164.2"/><line x1="114.5" y1="148.3" x2="120.7" y2="139.6"/><line x1="161.4" y1="139.6" x2="120.7" y2="139.6"/><line x1="50.7" y1="148.9" x2="91.4" y2="142.9"/></g>
+            <g stroke="#8fc5b0" stroke-width=".8" stroke-dasharray="2 3" opacity=".55"><line x1="92.8" y1="121" x2="104.4" y2="144.3"/><line x1="92.8" y1="121" x2="91.4" y2="142.9"/><line x1="105.1" y1="105.7" x2="141.4" y2="103.3"/><line x1="103.8" y1="116.6" x2="134.6" y2="140.8"/><line x1="224.4" y1="84.7" x2="230.5" y2="95.1"/><line x1="169.2" y1="151.7" x2="161.4" y2="139.6"/><line x1="134.6" y1="140.8" x2="120.7" y2="139.6"/><line x1="242.4" y1="111.8" x2="246.1" y2="97.4"/><line x1="230.5" y1="95.1" x2="161.4" y2="139.6"/><line x1="227.2" y1="105.7" x2="161.4" y2="139.6"/></g>
+            <g fill="#b09a6a" fill-opacity=".9" stroke="#171d19" stroke-width=".9"><circle cx="53.3" cy="103.9" r="2.8"/><circle cx="92.8" cy="121" r="3.9"/><circle cx="33.6" cy="89.4" r="2.8"/><circle cx="43.7" cy="94.1" r="3.3"/><circle cx="62.4" cy="82.4" r="3.9"/><circle cx="72.9" cy="80.7" r="3.9"/><circle cx="73.7" cy="103.7" r="5"/><circle cx="47.2" cy="84.2" r="2.8"/><circle cx="105.1" cy="105.7" r="3.3"/><circle cx="75.1" cy="91" r="3.9"/><circle cx="103.8" cy="116.6" r="2.8"/><circle cx="85.8" cy="101.5" r="3.3"/><circle cx="36.4" cy="107.8" r="2.8"/><circle cx="94.2" cy="83.8" r="3.9"/></g>
+            <g stroke="#b09a6a" stroke-width=".8" opacity=".6"><circle cx="73.7" cy="103.7" r="7.6"/></g>
+            <g fill="#8fc5b0" fill-opacity=".9" stroke="#171d19" stroke-width=".9"><circle cx="214.1" cy="132.9" r="3.3"/><circle cx="223.7" cy="142.1" r="3.9"/><circle cx="152.1" cy="95.9" r="4.5"/><circle cx="155.8" cy="107.5" r="3.3"/><circle cx="224.4" cy="84.7" r="3.3"/><circle cx="181.7" cy="135.1" r="3.3"/><circle cx="175.3" cy="94" r="3.9"/><circle cx="152.2" cy="127.3" r="3.9"/><circle cx="203.6" cy="115.4" r="3.3"/><circle cx="190.9" cy="141.6" r="2.8"/><circle cx="169.2" cy="151.7" r="2.8"/><circle cx="148.7" cy="150.3" r="2.8"/><circle cx="134.6" cy="140.8" r="3.3"/><circle cx="174.5" cy="112.9" r="5"/><circle cx="195" cy="129.8" r="4.5"/><circle cx="256.4" cy="155.6" r="2.2"/><circle cx="141.4" cy="103.3" r="3.3"/><circle cx="242.4" cy="111.8" r="3.9"/></g>
+            <g stroke="#8fc5b0" stroke-width=".8" opacity=".6"><circle cx="174.5" cy="112.9" r="7.6"/></g>
+            <g fill="#e0d5b4" fill-opacity=".9" stroke="#171d19" stroke-width=".9"><circle cx="260.3" cy="95.1" r="6.1"/><circle cx="241.7" cy="86.1" r="3.9"/><circle cx="280.6" cy="104.8" r="4.5"/><circle cx="273" cy="91.8" r="3.9"/><circle cx="281.8" cy="118.8" r="2.8"/><circle cx="259.7" cy="113.3" r="2.2"/><circle cx="294.5" cy="89" r="2.8"/><circle cx="295" cy="106.1" r="2.8"/><circle cx="270.7" cy="120.1" r="3.3"/><circle cx="246.1" cy="97.4" r="4.5"/><circle cx="230.5" cy="95.1" r="4.5"/><circle cx="227.2" cy="105.7" r="3.3"/></g>
+            <g stroke="#e0d5b4" stroke-width=".8" opacity=".6"><circle cx="260.3" cy="95.1" r="8.7"/></g>
+            <g fill="#c48d6c" fill-opacity=".9" stroke="#171d19" stroke-width=".9"><circle cx="124.3" cy="156.9" r="3.3"/><circle cx="104.4" cy="144.3" r="5.6"/><circle cx="87.4" cy="157.4" r="3.3"/><circle cx="114.5" cy="148.3" r="2.8"/><circle cx="161.4" cy="139.6" r="3.9"/><circle cx="50.7" cy="148.9" r="2.8"/><circle cx="91.4" cy="142.9" r="3.3"/><circle cx="98.4" cy="164.2" r="2.2"/><circle cx="120.7" cy="139.6" r="3.9"/></g>
+            <g stroke="#c48d6c" stroke-width=".8" opacity=".6"><circle cx="104.4" cy="144.3" r="8.2"/></g>
+          </svg>
+        </div>
+        <div class="theme-body">
+          <h3 class="theme-title">土壌微生物群集の多様性</h3>
+          <p class="theme-en">Diversity of soil microbial communities</p>
+          <p class="theme-desc">森林の土壌には、膨大な種類の細菌や真菌が暮らしています。DNAシーケンス解析を用いて、標高・季節・地形・植生に沿った群集の変化を調べ、その多様性を決める要因を探っています。限られた試料から群集の全体像を効率よく捉える、ベイズ適応的サンプリングの開発にも取り組んでいます。</p>
+          <ul class="theme-refs">
+            <li class="theme-refs-label">代表的な論文</li>
+            <li><a href="https://doi.org/10.1016/j.catena.2022.106253" target="_blank" rel="noopener">Shigyo et al. (2022) <i>CATENA</i></a></li>
+            <li><a href="https://doi.org/10.3389/fmicb.2019.01944" target="_blank" rel="noopener">Shigyo et al. (2019) <i>Frontiers in Microbiology</i></a></li>
+            <li><a href="https://doi.org/10.1093/femsec/fiz025" target="_blank" rel="noopener">Shigyo et al. (2019) <i>FEMS Microbiology Ecology</i></a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="theme-card">
+        <div class="theme-fig">
+          <svg viewBox="0 0 320 180" role="img" aria-label="落葉の分解と炭素・窒素の循環の模式図" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <defs><marker id="ah-g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1 L8,5 L1,9" stroke="#b09a6a" stroke-width="1.6" fill="none"/></marker><marker id="ah-m" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1 L8,5 L1,9" stroke="#8fc5b0" stroke-width="1.6" fill="none"/></marker></defs>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(160 36) rotate(0) scale(1.5)" stroke="#5a8a6e" stroke-width="0.8" fill="#5a8a6e" fill-opacity=".14" opacity="1"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(140 44) rotate(-48) scale(1.1)" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14" opacity="0.8"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(180 44) rotate(48) scale(1.1)" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14" opacity="0.8"/>
+            <line x1="104" y1="150" x2="216" y2="150" stroke="#5a8a6e" stroke-width="1" opacity=".7"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(140 142) rotate(80) scale(1.0)" stroke="#b09a6a" stroke-width="1.2" fill="#b09a6a" fill-opacity=".14" opacity="0.9"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(162 144) rotate(100) scale(1.0)" stroke="#b09a6a" stroke-width="1.2" fill="#b09a6a" fill-opacity=".14" opacity="0.9"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(182 142) rotate(70) scale(0.9)" stroke="#b09a6a" stroke-width="1.3" fill="#b09a6a" fill-opacity=".14" opacity="0.8"/>
+            <g fill="#8fc5b0" opacity=".85"><circle cx="128" cy="158" r="1.5"/><circle cx="142" cy="162" r="1.5"/><circle cx="155" cy="157" r="1.5"/><circle cx="168" cy="163" r="1.5"/><circle cx="181" cy="158" r="1.5"/><circle cx="194" cy="162" r="1.5"/><circle cx="150" cy="166" r="1.5"/><circle cx="176" cy="167" r="1.5"/></g>
+            <path d="M196,52 A52,52 0 0 1 200,128" stroke="#b09a6a" stroke-width="1.4" marker-end="url(#ah-g)"/>
+            <path d="M120,128 A52,52 0 0 1 124,52" stroke="#b09a6a" stroke-width="1.4" marker-end="url(#ah-g)"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(190 82) rotate(25) scale(0.7)" stroke="#5a8a6e" stroke-width="1.7" fill="#5a8a6e" fill-opacity=".14" opacity="0.8"/>
+            <path d="M0,-9 C6,-5 6,5 0,9 C-6,5 -6,-5 0,-9 Z M0,-9 V9" transform="translate(186 108) rotate(-25) scale(0.6)" stroke="#5a8a6e" stroke-width="2" fill="#5a8a6e" fill-opacity=".14" opacity="0.65"/>
+            <text x="150" y="98" fill="#b09a6a" stroke="none" font-family="'Noto Sans JP',sans-serif" font-size="12" text-anchor="middle" letter-spacing="1">C · N</text>
+            <path d="M262,60 C262,104 240,134 214,146" stroke="#8fc5b0" stroke-width="1.1" stroke-dasharray="3 4" marker-end="url(#ah-m)"/>
+            <text x="262" y="50" fill="#8fc5b0" stroke="none" font-family="'Noto Sans JP',sans-serif" font-size="12" text-anchor="middle">N₂</text>
+            <path d="M106,146 C80,134 58,104 58,62" stroke="#8fc5b0" stroke-width="1.1" stroke-dasharray="3 4" marker-end="url(#ah-m)"/>
+            <text x="58" y="50" fill="#8fc5b0" stroke="none" font-family="'Noto Sans JP',sans-serif" font-size="12" text-anchor="middle">CO₂</text>
+          </svg>
+        </div>
+        <div class="theme-body">
+          <h3 class="theme-title">落葉分解と物質循環</h3>
+          <p class="theme-en">Litter decomposition and nutrient cycling</p>
+          <p class="theme-desc">落ち葉が分解され、炭素や窒素が再び生物に利用されるまでの過程を、微生物の働きから理解します。落葉がその樹木の生育地で速く分解される「ホームフィールド・アドヴァンテージ」の仕組みや、落葉や土壌にすむ窒素固定菌の役割を、野外操作実験と分子生態学的手法で調べています。</p>
+          <ul class="theme-refs">
+            <li class="theme-refs-label">代表的な論文</li>
+            <li><a href="https://doi.org/10.1111/nph.19769" target="_blank" rel="noopener">Shigyo et al. (2024) <i>New Phytologist</i></a></li>
+            <li><a href="https://doi.org/10.1016/j.pedobi.2021.150746" target="_blank" rel="noopener">Hirao et al. (2021) <i>Pedobiologia</i></a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="theme-card">
+        <div class="theme-fig">
+          <svg viewBox="0 0 320 180" role="img" aria-label="防鹿柵の内側で回復する植生と、柵の外で採食するシカの模式図" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="20" y1="150" x2="300" y2="150" stroke="#5a8a6e" stroke-width="1" opacity=".7"/>
+            <g stroke="#b09a6a" stroke-width=".6" opacity=".38"><line x1="162" y1="84" x2="294" y2="84"/><line x1="162" y1="95" x2="294" y2="95"/><line x1="162" y1="106" x2="294" y2="106"/><line x1="162" y1="117" x2="294" y2="117"/><line x1="162" y1="128" x2="294" y2="128"/><line x1="162" y1="139" x2="294" y2="139"/><line x1="173" y1="84" x2="173" y2="150"/><line x1="184" y1="84" x2="184" y2="150"/><line x1="195" y1="84" x2="195" y2="150"/><line x1="206" y1="84" x2="206" y2="150"/><line x1="217" y1="84" x2="217" y2="150"/><line x1="228" y1="84" x2="228" y2="150"/><line x1="239" y1="84" x2="239" y2="150"/><line x1="250" y1="84" x2="250" y2="150"/><line x1="261" y1="84" x2="261" y2="150"/><line x1="272" y1="84" x2="272" y2="150"/><line x1="283" y1="84" x2="283" y2="150"/></g>
+            <g stroke="#b09a6a" stroke-width="1.8"><line x1="162" y1="78" x2="162" y2="152"/><line x1="294" y1="78" x2="294" y2="152"/></g>
+            <line x1="162" y1="84" x2="294" y2="84" stroke="#b09a6a" stroke-width="1.1"/>
+            <path d="M180,150 V116" stroke="#5a8a6e" stroke-width="1.2"/><path d="M180,131.3 c-7,-2 -10,-7 -9,-12 c6,1 9,6 9,12 M180,122.8 c7,-2 10,-7 9,-12 c-6,1 -9,6 -9,12" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14"/>
+            <path d="M202,150 V98" stroke="#5a8a6e" stroke-width="1.2"/><path d="M202,121.4 c-7,-2 -10,-7 -9,-12 c6,1 9,6 9,12 M202,108.4 c7,-2 10,-7 9,-12 c-6,1 -9,6 -9,12" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14"/>
+            <path d="M226,150 V110" stroke="#5a8a6e" stroke-width="1.2"/><path d="M226,128 c-7,-2 -10,-7 -9,-12 c6,1 9,6 9,12 M226,118 c7,-2 10,-7 9,-12 c-6,1 -9,6 -9,12" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14"/>
+            <path d="M250,150 V92" stroke="#5a8a6e" stroke-width="1.2"/><path d="M250,118.1 c-7,-2 -10,-7 -9,-12 c6,1 9,6 9,12 M250,103.6 c7,-2 10,-7 9,-12 c-6,1 -9,6 -9,12" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14"/>
+            <path d="M274,150 V114" stroke="#5a8a6e" stroke-width="1.2"/><path d="M274,130.2 c-7,-2 -10,-7 -9,-12 c6,1 9,6 9,12 M274,121.2 c7,-2 10,-7 9,-12 c-6,1 -9,6 -9,12" stroke="#5a8a6e" stroke-width="1.1" fill="#5a8a6e" fill-opacity=".14"/>
+            <g stroke="#5a8a6e" stroke-width="1.2" opacity=".85"><path d="M28,150 v-5 M28,145 l-3,-3 M28,145 l3,-3"/><path d="M40,150 v-4 M40,146 l-3,-3 M40,146 l3,-3"/><path d="M134,150 v-5 M134,145 l-3,-3 M134,145 l3,-3"/><path d="M144,150 v-4 M144,146 l-3,-3 M144,146 l3,-3"/><path d="M153,150 v-6 M153,144 l-3,-3 M153,144 l3,-3"/></g>
+            <g transform="translate(44 62)" stroke="#b09a6a" stroke-width="1.3"><path d="M10,40 C18,34 40,34 52,35 C58,30 62,22 66,14 C68,10 74,10 78,13 L84,18 C82,22 76,22 72,21 C68,30 64,40 60,46 C60,52 58,54 56,54 L56,88 L52,88 L51,58 L48,58 L46,88 L42,88 L43,56 C36,58 28,58 24,56 L26,70 L24,88 L20,88 L20,70 L17,60 L14,72 L15,88 L11,88 L9,72 L10,54 C8,50 8,44 10,40 Z" fill="#b09a6a" fill-opacity=".14"/><path d="M70,11 C68,2 66,-4 62,-10 M67,0 L74,-6 M65,-5 L70,-12 M73,11 C74,4 76,-2 80,-6 M75,2 L80,2"/><path d="M66,13 L60,9 L65,16"/></g>
+          </svg>
+        </div>
+        <div class="theme-body">
+          <h3 class="theme-title">シカと森林生態系</h3>
+          <p class="theme-en">Deer and forest ecosystems</p>
+          <p class="theme-desc">増えすぎたニホンジカの採食は、下層植生だけでなく、そこに暮らす昆虫や鳥類、土壌にまで影響を広げます。奥秩父山地での継続調査と防鹿柵を用いた野外実験から、影響の広がりと、植生が回復していく過程や条件を明らかにします。</p>
+          <ul class="theme-refs">
+            <li class="theme-refs-label">代表的な論文</li>
+            <li><a href="https://doi.org/10.1007/s42991-022-00303-w" target="_blank" rel="noopener">Tanigawa et al. (2022) <i>Mammalian Biology</i></a></li>
+            <li><a href="https://doi.org/10.11492/ceispapers.ceis34.0_156" target="_blank" rel="noopener">牧野ら (2020) <i>環境情報科学論文集</i></a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <div class="card">
     <div class="card-hd"><span class="card-hd-title">最新ニュース</span></div>
@@ -384,6 +595,7 @@
       <a href="members.html">メンバー</a>
       <a href="links.html">いろいろ</a>
       <a href="access.html">連絡先/アクセス</a>
+      <a href="en.html" lang="en">English</a>
     </nav>
     <span class="footer-copy">&copy; <span id="y"></span> Green Space &amp; Environmental Informatics Laboratory</span>
   </div>
