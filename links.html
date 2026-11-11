@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
     --bg: #0d110f;
@@ -54,7 +55,7 @@
     color: var(--text);
     font-family: 'Noto Sans JP', system-ui, sans-serif;
     min-height: 100vh; overflow-x: hidden;
-    animation: pageFadeIn 0.7s ease forwards;
+    animation: pageFadeIn 0.4s ease forwards;
   }
 
   @keyframes pageFadeIn {
@@ -241,6 +242,16 @@
   .footer-links a { font-size: 12px; letter-spacing: 0.08em; color: var(--text-dim); }
   .footer-links a:hover { color: var(--gold); }
   .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+
+  /* ── Motion: blocks appear on scroll ── */
+  .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--rd, 0s); }
+  .js .reveal.is-visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    body, .hero-img, .hero-content .container > *, .theme-fig svg * { animation: none !important; }
+    .a-move { display: none !important; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -448,14 +459,32 @@ document.querySelectorAll('a[href]').forEach(a => {
   a.addEventListener('click', function(e) {
     e.preventDefault();
     const trans = document.createElement('div');
-    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s cubic-bezier(0.7,0,0.3,1)';
+    trans.className = 'page-trans';
+    trans.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d110f;opacity:0;transition:opacity 0.18s ease';
     document.body.appendChild(trans);
     requestAnimationFrame(() => {
-      trans.style.transform = 'scaleY(1)';
-      setTimeout(() => { window.location.href = href; }, 520);
+      trans.style.opacity = '1';
+      setTimeout(() => { window.location.href = href; }, 190);
     });
   });
 });
+window.addEventListener('pageshow', e => { if (e.persisted) document.querySelectorAll('.page-trans').forEach(n => n.remove()); });
+
+/* Motion: theme figures animate while on screen; blocks appear on scroll */
+(function () {
+  const cards = document.querySelectorAll('.theme-card');
+  if (!('IntersectionObserver' in window)) { cards.forEach(c => c.classList.add('is-in')); return; }
+  const figs = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-in', e.isIntersecting)), { threshold: 0.3 });
+  cards.forEach(c => figs.observe(c));
+  const reveal = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-visible'); reveal.unobserve(e.target); }
+  }), { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('main > .card, main > .pub-block, main > .profile-card, main > .member-card, main .two-col > .card, main .section-hd, main .theme-card').forEach((el, i) => {
+    el.classList.add('reveal');
+    if (el.classList.contains('theme-card')) el.style.setProperty('--rd', ((i % 2) * 0.12) + 's');
+    reveal.observe(el);
+  });
+})();
 </script>
 </body>
 </html>
