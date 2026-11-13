@@ -330,6 +330,14 @@
     letter-spacing: 0.05em;
   }
   .news-text { font-size: 14px; line-height: 1.85; }
+  .news-more { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .news-more summary {
+    cursor: pointer; user-select: none;
+    font-size: 12px; letter-spacing: 0.14em; color: var(--gold);
+    padding: 4px 0;
+  }
+  .news-more summary:hover { color: var(--gold-light); }
+  .news-more[open] summary { margin-bottom: 4px; }
 
   /* ── Footer ── */
   footer {
@@ -460,6 +468,50 @@
       <p>私たちは、森林・緑地をかたちづくる生物とその相互作用を、さまざまな視点から研究しています。現地での観測や実験、分子生態学的な解析、統計解析やシミュレーションを組み合わせながら、生態系の複雑な仕組みを明らかにしようとしています。植物、微生物、個体群、群集、景観など、異なる分類群、異なる階層で得られる情報を結びつけることで、生物と環境の相互作用や、生態系が変化していく過程を統合的に捉えることを目指しています。</p>
       <p>主な研究テーマとしては、森林動態の計測と予測、土壌微生物群集の多様性と機能、生態系の物質循環、野生動物と植生の相互作用などがあります。個別の現象を扱いながらも、それらを別々の問題としてではなく、森林・緑地という複雑なシステムの中でつながった現象として理解することを大切にしています。</p>
       <p>学生・PDの受入、研究室見学（要メールアポ）、共同研究も歓迎しています。お気軽に<a href="access.html">連絡先</a>からお問い合わせください。</p>
+    </div>
+  </div>
+
+  <!-- 最新ニュース：上の一覧には最新3件だけを置き、新しい項目を足すときは3件目を「過去のニュース」の先頭へ移します -->
+  <div class="card" id="news">
+    <div class="card-hd"><span class="card-hd-title">最新ニュース</span></div>
+    <div class="card-bd">
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026/11/13</span>
+          <span class="news-text">ホームページを更新しました。研究テーマの紹介・学会発表などを追加しました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/06/09</span>
+          <span class="news-text">執行講師らによる長期降雨遮断試験地における土壌微生物（細菌・真菌・アーバスキュラー菌根菌）群集組成に関する<a href="https://journals.asm.org/doi/10.1128/mra.00209-26" target="_blank" rel="noopener">データペーパー</a>が<i>Microbiology Resource Announcements</i>誌に掲載されました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/03/17</span>
+          <span class="news-text">第137回日本森林学会大会（つくば）において、当研究室の学生の小笠原圭佑さんと佐藤宏紀さんがポスター発表を行いました。<br>
+          ・小笠原圭佑・滝谷美香・梅木清. 環境変動に対応した人工林の樹高成長時系列解析. 第137回日本森林学会大会, PE-8, つくば, 2026年3月17日.<br>
+          ・佐藤宏紀・梅木清・平尾聡秀. 構造方程式モデリングによるシカ食害後の下層植生回復の因果関係の解明. 第137回日本森林学会大会, PW-26, つくば, 2026年3月17日.</span>
+        </li>
+      </ul>
+      <details class="news-more">
+        <summary>過去のニュース</summary>
+        <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026/03/12</span>
+          <span class="news-text">日本生態学会第73回全国大会（京都）のシンポジウム<a href="https://www.esj.ne.jp/meeting/abst/73/S10.html" target="_blank" rel="noopener">「情報科学×生態学: 多階層をつなぐ生態現象の理解」</a>において、執行講師が土壌微生物群集の適応的サンプリングについて発表しました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/01/31</span>
+          <span class="news-text">執行講師によるIUFRO（国際森林研究機関連合）タスクフォース（<a href="https://www.iufro.org/task-forces/t58-the-impact-of-biodiversity-on-carbon-related-ecosystem-services-provided-by-soils-of-managed-forests" target="_blank" rel="noopener">T58</a>）の活動を紹介する記事が<a href="https://www.iufro.org/publications/iufro-japan-news-no-139" target="_blank" rel="noopener">IUFRO-J News（第139号）</a>に掲載されました。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/01/27</span>
+          <span class="news-text">研究室ホームページを更新しました。今後、順次内容を充実させていく予定です。</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026/01/01</span>
+          <span class="news-text">1月1日付けで、当研究室に講師として執行が着任しました。</span>
+        </li>
+        </ul>
+      </details>
     </div>
   </div>
 
@@ -602,39 +654,6 @@
     </div>
   </section>
 
-  <div class="card">
-    <div class="card-hd"><span class="card-hd-title">最新ニュース</span></div>
-    <div class="card-bd">
-      <ul class="news-list">
-        <li class="news-item">
-          <span class="news-date">2026/06/09</span>
-          <span class="news-text">執行講師らによる長期降雨遮断試験地における土壌微生物（細菌・真菌・アーバスキュラー菌根菌）群集組成に関する<a href="https://journals.asm.org/doi/10.1128/mra.00209-26" target="_blank" rel="noopener">データペーパー</a>が<i>Microbiology Resource Announcements</i>誌に掲載されました。</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026/03/17</span>
-          <span class="news-text">第137回日本森林学会大会（つくば）において、当研究室の学生の小笠原圭佑さんと佐藤宏紀さんがポスター発表を行いました。<br>
-          ・小笠原圭佑・滝谷美香・梅木清. 環境変動に対応した人工林の樹高成長時系列解析. 第137回日本森林学会大会, PE-8, つくば, 2026年3月17日.<br>
-          ・佐藤宏紀・梅木清・平尾聡秀. 構造方程式モデリングによるシカ食害後の下層植生回復の因果関係の解明. 第137回日本森林学会大会, PW-26, つくば, 2026年3月17日.</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026/03/12</span>
-          <span class="news-text">日本生態学会第73回全国大会（京都）のシンポジウム<a href="https://www.esj.ne.jp/meeting/abst/73/S10.html" target="_blank" rel="noopener">「情報科学×生態学: 多階層をつなぐ生態現象の理解」</a>において、執行講師が土壌微生物群集の適応的サンプリングについて発表しました。</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026/01/31</span>
-          <span class="news-text">執行講師によるIUFRO（国際森林研究機関連合）タスクフォース（<a href="https://www.iufro.org/task-forces/t58-the-impact-of-biodiversity-on-carbon-related-ecosystem-services-provided-by-soils-of-managed-forests" target="_blank" rel="noopener">T58</a>）の活動を紹介する記事が<a href="https://www.iufro.org/publications/iufro-japan-news-no-139" target="_blank" rel="noopener">IUFRO-J News（第139号）</a>に掲載されました。</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026/01/27</span>
-          <span class="news-text">研究室ホームページを更新しました。今後、順次内容を充実させていく予定です。</span>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026/01/01</span>
-          <span class="news-text">1月1日付けで、当研究室に講師として執行が着任しました。</span>
-        </li>
-      </ul>
-    </div>
-  </div>
 </main>
 
 <footer>
